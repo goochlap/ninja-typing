@@ -1,2 +1,10 @@
 <h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<br>
+<% if current_user && !current_user.avatar.nil? %>
+  <h3>Avatar's name: <%= current_user.avatar.name %></h3>
+  <h3>Gender: <%= current_user.avatar.gender %></h3>
+<% end %>
+
+<% if current_user && current_user.avatar.nil? %>
+  <%= link_to 'Create Your Avatar', new_user_avatar_path(current_user) %>
+<% end %>

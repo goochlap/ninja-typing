@@ -1,0 +1,5 @@
+<%= simple_form_for [@user, @avatar] do |f| %>
+  <%= f.input :name %>
+  <%= f.input :gender, collection: ['Male', 'Female'] %>
+  <%= f.button :submit, "Submit" %>
+<% end %>
