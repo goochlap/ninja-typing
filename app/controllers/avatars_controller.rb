@@ -1,4 +1,6 @@
 class AvatarsController < ApplicationController
+  def show; end
+
   def new
     unless current_user.avatar.nil?
       flash[:notice] = "You Already have an Avatar!"
