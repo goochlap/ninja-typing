@@ -7,5 +7,5 @@ class User < ApplicationRecord
   has_one :avatar
   validates :email, presence: true
   validates :name, uniqueness: true, presence: true
-  validates :password, format: { with: /\A(?=.*\d)(?=.*([a-z]))(?=.*[@#$%^&+=]){6,}\z/i, message: "must be at least 6 characters and include one special character."}
+  validates :password, presence: true, length: { minimum: 6 }
 end
