@@ -1,10 +1,9 @@
-<h1>Pages#home</h1>
+<h1>Ninja Typing -- Home Page</h1>
 <br>
 <% if current_user && !current_user.avatar.nil? %>
-  <h3>Avatar's name: <%= current_user.avatar.name %></h3>
-  <h3>Gender: <%= current_user.avatar.gender %></h3>
+<%= link_to 'Avatar show', user_avatar_path(current_user, current_user.avatar) %>
 <% end %>
-
+<br>
 <% if current_user && current_user.avatar.nil? %>
   <%= link_to 'Create Your Avatar', new_user_avatar_path(current_user) %>
 <% end %>
