@@ -1,9 +1,12 @@
 <h1>Ninja Typing -- Home Page</h1>
 <br>
 <% if current_user && !current_user.avatar.nil? %>
-<%= link_to 'Avatar show', user_avatar_path(current_user, current_user.avatar) %>
+  <%= link_to 'Avatar show', user_avatar_path(current_user, current_user.avatar) %>
 <% end %>
 <br>
 <% if current_user && current_user.avatar.nil? %>
   <%= link_to 'Create Your Avatar', new_user_avatar_path(current_user) %>
+  <%# redirect to avatar new %>
 <% end %>
+
+<%# play button %>

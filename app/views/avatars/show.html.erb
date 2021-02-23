@@ -1,2 +1,4 @@
-<h3>Avatar's name: <%= current_user.avatar.name %></h3>
-<h3>Gender: <%= current_user.avatar.gender %></h3>
+<h3>Avatar's name: <%= @avatar.name %></h3>
+<h3>Gender: <%= @avatar.gender %></h3>
+
+<%= link_to 'Edit Avatar', edit_user_avatar_path(current_user, @avatar)  %>
