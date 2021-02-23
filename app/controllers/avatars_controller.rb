@@ -1,10 +1,14 @@
 class AvatarsController < ApplicationController
+  before_action :find_avatar, only: %i[edit update show]
+
   def show; end
+
+  def edit; end
 
   def new
     unless current_user.avatar.nil?
       flash[:notice] = "You Already have an Avatar!"
-      redirect_to root_path
+      redirect_to root_path # redirect to user board
     end
     @user = current_user
     @avatar = Avatar.new
@@ -22,7 +26,16 @@ class AvatarsController < ApplicationController
     end
   end
 
+  def update
+    @avatar.update(avatar_params)
+    redirect_to user_avatar_path(current_user, current_user.avatar)
+  end
+
   private
+
+  def find_avatar
+    @avatar = Avatar.find(params[:id])
+  end
 
   def avatar_params
     params.require(:avatar).permit(:name, :gender)
