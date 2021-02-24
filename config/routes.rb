@@ -4,6 +4,9 @@ Rails.application.routes.draw do
 
   resources :users do
     resources :avatars, only: %i[ new create show edit update ]
+  end  
+  resources :avatars do
+    resources :boards, only: %i[ show ]
   end 
 
 end

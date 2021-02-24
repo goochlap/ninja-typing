@@ -1,6 +1,7 @@
 class Avatar < ApplicationRecord
   belongs_to :user
 
+  has_one :board
   has_many :items, through: :avatar_items
   has_many :avatar_items
 
