@@ -18,6 +18,7 @@ class AvatarsController < ApplicationController
     @avatar = Avatar.new(avatar_params)
     @avatar.user = current_user
     if @avatar.save
+      Board.create(avatar: @avatar)
       flash[:notice] = "Avatar successfully created"
       redirect_to root_path
     else

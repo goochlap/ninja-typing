@@ -6,7 +6,6 @@
 <br>
 <% if current_user && current_user.avatar.nil? %>
   <%= link_to 'Create Your Avatar', new_user_avatar_path(current_user) %>
-  <%# redirect to avatar new %>
 <% end %>
-
-<%# play button %>
+<br>
+<%= link_to 'PlAY!', avatar_board_path(current_user.avatar, current_user.avatar.board)  %>
