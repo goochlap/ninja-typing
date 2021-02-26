@@ -4,10 +4,10 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :users do
-    resources :avatars, only: %i[ new create show edit update ]
-  end  
-  resources :avatars do
-    resources :boards, only: %i[ show ]
-  end 
+    resources :avatars, only: %i[ new create show edit update ] do
+      resources :boards, only: %i[ show ]
+    end 
+  end
 
+  resources :items
 end
