@@ -2,10 +2,11 @@
 <br>
 <% if current_user && !current_user.avatar.nil? %>
   <%= link_to 'Avatar show', user_avatar_path(current_user, current_user.avatar) %>
+  <br>
+  <%= link_to 'PlAY!', user_avatar_board_path(current_user, current_user.avatar, current_user.avatar.board)  %>
 <% end %>
 <br>
 <% if current_user && current_user.avatar.nil? %>
   <%= link_to 'Create Your Avatar', new_user_avatar_path(current_user) %>
 <% end %>
 <br>
-<%= link_to 'PlAY!', avatar_board_path(current_user.avatar, current_user.avatar.board)  %>

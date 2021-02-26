@@ -1,0 +1,7 @@
+<h1>SHOP - Items#index -</h1>
+<br>
+<% @items.each do |item| %>
+  <ul><h3>- <%= item.name.capitalize %></h3></ul>
+  <%# button 'Buy' => avatar_items#create %>
+  <%# redirect_to user_avatar_path(current_user, current_user.avatar) %>
+<% end %>
