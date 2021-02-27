@@ -1,0 +1,11 @@
+<h1><%= @game.name %></h1>
+<br> 
+
+<% if @game.participations.count >= 1 %>
+  <% @game.participations.each do |participation| %>
+    <li>Your score(s)<%= participation.finished_in %></li>
+  <% end %>
+<% end %>
+
+<br>
+<%= link_to 'PLAY!', participations_path(game_id: @game, board_id: current_user.avatar.board), method: :post %>

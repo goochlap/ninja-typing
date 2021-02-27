@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  get '/game', to: 'pages#game'
   root to: 'pages#home'
   
   resources :users do
@@ -9,6 +8,8 @@ Rails.application.routes.draw do
       resources :boards, only: %i[ show ]
     end 
   end
+  resources :games, only: %i[ show ]
   resources :avatar_items, only: %i[ create ]
   resources :items
+  resources :participations, only: %i[ create ]
 end
