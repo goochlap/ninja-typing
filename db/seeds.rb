@@ -9,3 +9,10 @@
 User.destroy_all
 # Avatar.destroy_all
 # Board.destroy_all
+
+Game.create(name: 'Ninja VS Bogdanov Brothers')
+Game.create(name: 'Zombies VS Ninjas')
+Game.create(name: 'Les Ninjas VS les chtis à Ibiza')
+Game.create(name: 'Au dessus des Ninjas...C le soleil !')
+
+puts 'Job Finished'
