@@ -22,7 +22,7 @@ class AvatarsController < ApplicationController
       flash[:notice] = "Avatar successfully created"
       redirect_to root_path
     else
-      flash[:error] = "Something went wrong"
+      flash[:alert] = "Something went wrong"
       render :new
     end
   end

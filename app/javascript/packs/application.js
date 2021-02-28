@@ -34,3 +34,15 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   play();
 });
+
+// set time out for notice messages
+$(function(){
+  const flashDurationInSeconds = 4;
+  const flashContainerId = 'flash-message';
+
+  function removeFlashMessages() {
+    $('#' + flashContainerId).remove();
+  }
+
+  setTimeout(removeFlashMessages, flashDurationInSeconds * 1000);
+})
