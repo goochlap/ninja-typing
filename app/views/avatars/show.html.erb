@@ -4,5 +4,15 @@
 <h3>Items:  <% @avatar.items.each do |item| %>
               <ul>- <%= item.name %></ul>
             <% end %></h3>
- 
+
 <%= link_to 'Edit Avatar', edit_user_avatar_path(current_user, @avatar)  %>
+
+<!-- <div id="background">
+<div class="righthand"><img src="/image/weapon2.png" alt=""></div>
+</div>
+ -->
+
+ <div class="ninjacontainer">
+   <div class="ninja"></div>
+   <div class="righthand" style="background-image: url(<%= @avatar.items.last.image %>);"></div>
+ </div>
