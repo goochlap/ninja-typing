@@ -4,7 +4,7 @@ class Avatar < ApplicationRecord
 
   has_one :board, dependent: :destroy
   has_many :avatar_items, dependent: :destroy
-  has_many :items, through: :avatar_items
+  has_many :items, through: :avatar_items, dependent: :destroy
 
   validates :name, presence: true, uniqueness: true
   validates :gender, presence: true
