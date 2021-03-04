@@ -1,7 +1,24 @@
 <h1>SHOP - Items#index -</h1>
-<br>
+<!-- <br>
 <% @items.each do |item| %>
   <ul><h3>- <%= item.name.capitalize %></h3></ul>
   <%# button 'Buy' => avatar_items#create %>
   <%# redirect_to user_avatar_path(current_user, current_user.avatar) %>
-<% end %>
+<% end %> -->
+
+
+<div class="container">
+  <% @items.each do |item| %>
+    <div class="card-trip">
+      <img src="<%= item.image %>">
+      <div class="card-trip-infos">
+        <div>
+          <h2><%= item.name %></h2>
+        </div>
+        <p class="card-trip-user avatar-bordered"><%= item.price %>c</p>
+        <button class="button"><%= link_to 'buy', user_avatar_path(current_user, current_user.avatar) %>
+</button>
+      </div>
+    </div>
+  <% end %>
+</div>

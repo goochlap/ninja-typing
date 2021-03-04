@@ -1,0 +1,30 @@
+.ninjacontainer {
+    position: relative;
+    width: 100%;
+    height: 540px;
+}
+
+
+.ninja{
+
+    background-repeat: no-repeat;
+    margin-left: 566px;
+    background-image: url("/image/ninja2.png");
+    background-size: contain;
+    width: 329px;
+    height: 590px;
+    position: absolute;
+}
+
+.righthand{
+    background-position: left;
+    height: 149px;
+    background-repeat: no-repeat;
+    // background-image: url("/image/weapon5.png");
+    background-size: contain;
+    width: 277px;
+    position: absolute;
+    top: 154px;
+    transform: rotate(-20deg);
+    left: 662px;
+}
