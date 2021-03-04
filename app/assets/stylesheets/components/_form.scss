@@ -1,0 +1,31 @@
+.form-login {
+  background: white;
+  padding: 10px 20px;
+  margin-top: 60px;
+  border-radius: 3px;
+  box-shadow: 2px 1px 6px rgba(0,0,0,0.2);
+  h2 {
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    margin: 15px 0;
+  }
+  .btn {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .btn:hover {
+    background-color: white;
+    color: $middle-red;
+  }
+  a {
+    color: black;
+  }
+}
+
+.container #img-form {
+  position: absolute;
+  height: 400px;
+  right: 125px;
+  top: 170px;
+}
