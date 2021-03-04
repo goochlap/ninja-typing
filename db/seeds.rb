@@ -6,13 +6,23 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.destroy_all
+
 # Avatar.destroy_all
 # Board.destroy_all
 
-Game.create(name: 'Ninja VS Bogdanov Brothers')
-Game.create(name: 'Zombies VS Ninjas')
-Game.create(name: 'Les Ninjas VS les chtis à Ibiza')
-Game.create(name: 'Au dessus des Ninjas...C le soleil !')
+puts "Cleaning database..."
+Item.destroy_all
 
-puts 'Job Finished'
+puts "Creating items..."
+weapon_1 = { name: "sword", price: "30", image: "/image/weapon2.png" }
+weapon_2 =  { name: "silver sword", price: "50", image: "/image/weapon3.png" }
+weapon_3 =  { name: "golden sword", price: "70", image: "/image/weapon4.png" }
+weapon_4 =  { name: "rock sword", price: "100", image: "/image/weapon5.png" }
+
+
+[ weapon_1, weapon_2, weapon_3, weapon_4 ].each do |attributes|
+  item = Item.create!(attributes)
+  puts "Created #{item.name}"
+end
+puts "Finished!"
+
