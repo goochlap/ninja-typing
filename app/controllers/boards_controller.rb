@@ -1,5 +1,5 @@
 class BoardsController < ApplicationController
   def show
-    @board = Board.find(params[:id])
+    @games = Game.all
   end
 end

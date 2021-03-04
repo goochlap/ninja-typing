@@ -1,5 +1,6 @@
-<h1>Ninja Typing -- Home Page</h1>
+<h1>NINJA TYPING -- Home Page</h1>
 <br>
+
 <% if current_user && !current_user.avatar.nil? %>
   <%= link_to 'Avatar show', user_avatar_path(current_user, current_user.avatar) %>
   <br>

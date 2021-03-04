@@ -1,1 +1,6 @@
 <h1>This is <strong><%= current_user.name.capitalize %></strong>'s boards</h1>
+
+<% @games.each do |game| %>
+  <li><%= link_to game.name, game_path(game) %></li>
+<% end %>
+

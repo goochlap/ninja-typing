@@ -2,6 +2,7 @@
 <!-- <br>
 <% @items.each do |item| %>
   <ul><h3>- <%= item.name.capitalize %></h3></ul>
+<<<<<<< HEAD
   <%# button 'Buy' => avatar_items#create %>
   <%# redirect_to user_avatar_path(current_user, current_user.avatar) %>
 <% end %> -->
@@ -16,8 +17,7 @@
           <h2><%= item.name %></h2>
         </div>
         <p class="card-trip-user avatar-bordered"><%= item.price %>c</p>
-        <button class="button"><%= link_to 'buy', user_avatar_path(current_user, current_user.avatar) %>
-</button>
+        <%= link_to 'Buy', avatar_items_path(avatar_id: current_user.avatar, item_id: item.id), method: :post %>
       </div>
     </div>
   <% end %>

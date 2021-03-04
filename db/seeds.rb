@@ -25,3 +25,4 @@ weapon_4 =  { name: "rock sword", price: "100", image: "/image/weapon5.png" }
   puts "Created #{item.name}"
 end
 puts "Finished!"
+

@@ -1,8 +1,10 @@
 <h3>Avatar's name: <%= @avatar.name %></h3>
 <h3>Gender: <%= @avatar.gender %></h3>
-<h3>Items: <%#= @avatar.items/avatar_items? %></h3>
-
-
+<h3>Coins: <%= @avatar.wallet %> $</h3>
+<h3>Items:  <% @avatar.items.each do |item| %>
+              <ul>- <%= item.name %></ul>
+            <% end %></h3>
+ 
 <%= link_to 'Edit Avatar', edit_user_avatar_path(current_user, @avatar)  %>
 
 <!-- <div id="background">

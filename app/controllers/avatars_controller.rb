@@ -8,7 +8,7 @@ class AvatarsController < ApplicationController
   def new
     unless current_user.avatar.nil?
       flash[:notice] = "You Already have an Avatar!"
-      redirect_to root_path # redirect to user board
+      redirect_to user_avatar_path(current_user, current_user.avatar)
     end
     @user = current_user
     @avatar = Avatar.new
@@ -22,7 +22,7 @@ class AvatarsController < ApplicationController
       flash[:notice] = "Avatar successfully created"
       redirect_to root_path
     else
-      flash[:error] = "Something went wrong"
+      flash[:alert] = "Something went wrong"
       render :new
     end
   end

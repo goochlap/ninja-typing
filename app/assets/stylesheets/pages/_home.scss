@@ -1,1 +1,16 @@
 // Specific CSS for your home-page
+body {
+  font-family: $body-font;
+}
+
+input:focus::placeholder {
+  color: transparent;
+}
+
+h1 {
+  font-family: $my-font;
+  text-align: center;
+  padding-top: 28px;
+  font-size: 58px;
+}
+
