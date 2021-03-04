@@ -14,5 +14,6 @@
 
  <div class="ninjacontainer">
    <div class="ninja"></div>
-   <div class="righthand" style="background-image: url(<%= @avatar.items.last.image %>);"></div>
- </div>
+   <div class="righthand" style="background-image: url(<%= @avatar.items.last.image if @avatar.items.present? %>);"></div>
+   <div class="leftthand" style="background-image: url(<%= @avatar.items.last.image if @avatar.items.present? %>);"></div>
+</div>

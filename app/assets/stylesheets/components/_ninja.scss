@@ -28,3 +28,16 @@
     transform: rotate(-20deg);
     left: 662px;
 }
+
+.leftthand {
+    background-position: left;
+    height: 149px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 181px;
+    position: absolute;
+    top: 224px;
+    left: 585px;
+    transform: scale(-1.5) rotate(-13deg);
+
+}
