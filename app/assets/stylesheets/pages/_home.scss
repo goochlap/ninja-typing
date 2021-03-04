@@ -1,6 +1,10 @@
 // Specific CSS for your home-page
 body {
   font-family: $body-font;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 input:focus::placeholder {
@@ -12,6 +16,9 @@ h1 {
   text-align: center;
   padding-top: 28px;
   font-size: 58px;
+}
+.main {
+  flex: 1 0 auto;
 }
 
 #img-home-page {
