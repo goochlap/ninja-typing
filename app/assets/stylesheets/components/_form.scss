@@ -1,8 +1,7 @@
 .form-login {
-  margin: 52px;
   background: white;
   padding: 10px 20px;
-  margin-top: 60px;
+  margin-top: 86px;
   border-radius: 3px;
   box-shadow: 2px 1px 6px rgba(0,0,0,0.2);
   h2 {
@@ -24,11 +23,17 @@
   }
 }
 
-.container-form #img-form {
+.container #img-form {
   position: absolute;
   height: 400px;
   right: 125px;
   top: 170px;
+}
+.container #img-mask {
+  position: absolute;
+  height: 337px;
+  top: 170px;
+  left: 56px;
 }
 
 input:focus::placeholder {
