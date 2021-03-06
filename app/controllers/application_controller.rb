@@ -10,7 +10,12 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:account_update, keys: [:name])
   end
 
-  def after_sign_in_path_for(resource)
-    stored_location_for(resource) || new_user_avatar_path(current_user)
+  def after_sign_in_path_for(_resource)
+    # stored_location_for(resource)
+    if current_user.avatar
+      user_avatar_board_path(current_user, current_user.avatar, current_user.avatar.board)
+    else
+      new_user_avatar_path(current_user)
+    end
   end
 end

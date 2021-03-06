@@ -1,17 +1,16 @@
-<div class="container">
-  <h1>NINJA TYPING</h1>
+<div class="container-home">
+  <h1 class="anim-typewriter">NINJA TYPING</h1>
   <div class="row">
-    <div class="col-12 col-sm-8 offset-sm-2 col-lg-4 offset-lg-4">
+    <div class="col-12 col-sm-8 offset-sm-2 col-lg-4 offset-lg-4 d-flex flex-column align-items-center">
       <%= image_tag ('dinosaur.png'), height: '300px', id: 'img-home-page' %>
+      <div>
+        <% if current_user && !current_user.avatar.nil? %>
+          <%= link_to "PLAY", user_avatar_board_path(current_user, current_user.avatar, current_user.avatar.board), class:'btn btn-play mt-5' %>
+        <% else %>
+          <%= link_to "PLAY", user_session_path, class:'btn btn-play mt-5' %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
-
-<%# if current_user && !current_user.avatar.nil? %>
-  <%#= link_to 'Avatar show', user_avatar_path(current_user, current_user.avatar) %>
-  <%#= link_to 'PlAY!', user_avatar_board_path(current_user, current_user.avatar, current_user.avatar.board)  %>
-<%# end %>
-<%# if current_user && current_user.avatar.nil? %>
-  <%#= link_to 'Create Your Avatar', new_user_avatar_path(current_user) %>
-<%# end %>
 
