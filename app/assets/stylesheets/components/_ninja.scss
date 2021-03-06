@@ -20,13 +20,12 @@
     background-position: left;
     height: 149px;
     background-repeat: no-repeat;
-    background-image: url("");
     background-size: contain;
-    width: 277px;
+    width: 294px;
     position: absolute;
-    top: 154px;
+    top: 150px;
     transform: rotate(-20deg);
-    left: 662px;
+    left: 669px;
 }
 
 .leftthand {
@@ -34,10 +33,10 @@
     height: 149px;
     background-repeat: no-repeat;
     background-size: contain;
-    width: 181px;
+    width: 141px;
     position: absolute;
-    top: 224px;
-    left: 585px;
-    transform: scale(-1.5) rotate(-13deg);
+    top: 228px;
+    left: 631px;
+    transform: scaleX(-1.5) scaleY(1.5) rotate(17deg);
 
 }
