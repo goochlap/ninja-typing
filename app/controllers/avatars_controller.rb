@@ -20,7 +20,8 @@ class AvatarsController < ApplicationController
     if @avatar.save
       Board.create(avatar: @avatar)
       flash[:notice] = "Avatar successfully created"
-      redirect_to root_path
+      redirect_to user_avatar_board_path(current_user, current_user.avatar, current_user.avatar.board)
+
     else
       flash[:alert] = "Something went wrong"
       render :new
