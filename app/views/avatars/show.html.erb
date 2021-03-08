@@ -1,13 +1,28 @@
-<div class="avatar-show-details">
-  <h3>Avatar's name: <%= @avatar.name %></h3>
-  <h3>Gender: <%= @avatar.gender %></h3>
-  <h3>Coins: <%= @avatar.wallet %> $</h3>
-  <h3>Items:  <% @avatar.items.each do |item| %>
+<!-- <div class="avatar-show-details">
+  <li>Avatar's name: <%= @avatar.name %></li>
+  <li>Gender: <%= @avatar.gender %></li>
+  <li>Coins: <%= @avatar.wallet %> $</li>
+  <li>Items:  <% @avatar.items.each do |item| %>
   <ul>- <%= item.name %></ul>
-  <% end %></h3>
-</div>
+  <% end %></li>
+  <li><%= link_to 'Edit Avatar', edit_user_avatar_path(current_user, @avatar)  %></li>
+</div> -->
+<!-- <div>
+<nav class="menu">
+   <input type="checkbox" href="#" class="menu-open" name="menu-open" id="menu-open" />
+   <label class="menu-open-button" for="menu-open">
+    <span class="lines line-1"></span>
+    <span class="lines line-2"></span>
+    <span class="lines line-3"></span>
+  </label>
 
-<%= link_to 'Edit Avatar', edit_user_avatar_path(current_user, @avatar)  %>
+   <a href="#" class="menu-item blue"><%= @avatar.name %></a>
+   <a href="#" class="menu-item green"><%= @avatar.wallet %>$</a>
+   <a href="#" class="menu-item red"><%= @avatar.gender %></a>
+   <a href="#" class="menu-item purple"> <i class="fa fa-microphone"></i> </a>
+</nav>
+</div>
+ -->
 
 <!-- <div id="background">
 <div class="righthand"><img src="/image/weapon2.png" alt=""></div>
@@ -15,7 +30,33 @@
  -->
 
  <div class="ninjacontainer">
+  <div class="menu-ninja">
+    <nav class="menu">
+     <input type="checkbox" href="#" class="menu-open" name="menu-open" id="menu-open" />
+     <label class="menu-open-button" for="menu-open">
+      <span class="lines line-1"></span>
+      <span class="lines line-2"></span>
+      <span class="lines line-3"></span>
+    </label>
+
+     <a href="<%= items_path %>" class="menu-item white">shop</a>
+     <a href="#" class="menu-item pink"><%= @avatar.wallet %>💰</a>
+     <button href="#" id="pocket" class="menu-item blue">sac</button>
+     <a href="<%= edit_user_avatar_path(current_user, @avatar)  %>" class="menu-item red">Edit</a>
+    </nav>
+  </div>
+
    <div class="ninja"></div>
    <div class="righthand" style="background-image: url(<%= @avatar.items.last.image if @avatar.items.present? %>);"></div>
    <div class="leftthand" style="background-image: url(<%= @avatar.items.last.image if @avatar.items.present? %>);"></div>
+   <div id="backpack">
+     <h1>Sac a dos</h1><hr>
+        <ul><% @avatar.items.each do |item| %>
+          <li class="card"><%= item.name %><%= link_to 'utiliser', avatar_items_path(avatar_id: current_user.avatar, item_id: item.id), method: :post %>
+          <img src="<%= item.image %>">
+          </li>
+        <% end %>
+      </ul>
+   </div>
 </div>
+
