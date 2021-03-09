@@ -28,12 +28,13 @@ import "bootstrap";
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 import { play } from "../game/ws";
-
+import { avatarMoving } from "../gameboard/game_index";
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   play();
+  avatarMoving();
 });
 
 // set time out for notice messages
@@ -47,3 +48,7 @@ $(function(){
 
   setTimeout(removeFlashMessages, flashDurationInSeconds * 1000);
 })
+
+
+
+
