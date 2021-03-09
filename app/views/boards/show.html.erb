@@ -1,6 +1,13 @@
 <h1>This is <strong><%= current_user.name.capitalize %></strong>'s boards</h1>
 
-<% @games.each do |game| %>
-  <li><%= link_to game.name, game_path(game) %></li>
-<% end %>
+<%= link_to @games.first.name, game_path(@games.first.id), id: 'game-show' %>
+<%= link_to @games.first.name, game_path(@games.first.id), id: 'game-show2' %>
+
+<%# @games.each do |game| %>
+  <%# <li>= link_to game.name, game_path(game)</li> %>
+<%# end %>
+
+<nav id="nav-bar">
+  <%= image_tag "ninja-github2.png", height: '200px', id: 'menu-button' %>
+</nav>
 
