@@ -1,90 +1,103 @@
 import Word from './word.js';
 import helper from './helper.js';
-
+import { createParticipation } from '../components/fetch_score_game';
+    
 const play = () => {
-    if (document.querySelector('#ws-wrapper') != null) {
-        const maxWordCount = 5; // maximum word count attacking
-    
-        // word database
-        const wordList = ['door', 'pen', 'half', 'hotel', 'run', 'rush', 'zero'];
-    
-        const words = [];
-        let score = 0;
-        let scoreElement = document.getElementById("score");
-    
-        // holds word index got hit until word dies
-        let activeWordIndex = null;
-    
-        for (let i=0; i<maxWordCount; i++) {
-            const word = new Word(randomWord());
+    const btnPlay = document.querySelector(".play-btn");
+    if(btnPlay) {
+        btnPlay.addEventListener('click', () => {
+            btnPlay.style.display = 'none';
+            if (document.querySelector('#ws-wrapper') != null) {
+                const maxWordCount = 5; // maximum word count attacking
             
-            // bind events
-            word.onDie = onWordDies;
-            word.onHit = onWordHits;
-    
-            words[i] = word;
-    
-            setTimeout(function(){
-                word.attack();
-            }, 1000 * i);
-        }
-    
-        document.addEventListener("keyup", heroAttack);
-    
-    
-        function randomWord(){
-            return wordList[ helper.random(0, wordList.length) ];
-        }
-    
-        // callled when a word dies
-        function onWordDies(word) {
-            activeWordIndex = null;
-    
-            word.reset(randomWord());
-        }
-    
-        // called when a word reaches to hero
-        function onWordHits(word) {
-            for (let i = 0; i < words.length; i++) {
-                // stop every words animations
-                words[i].stop();
-            }
-    
-            // animations needs time to stop
-            setTimeout(function() {
-                alert(`GAME OVER! SCORE ${score}`)
-            }, 10);
-        }
-    
-        function heroAttack(e) {
-            const letter = String.fromCharCode(e.keyCode).toLowerCase();
-    
-            if(activeWordIndex === null) {
-                for (let i = 0; i < words.length; i++) {
-                    if(words[i].letters[0] === letter) {
-                        incrementScore();
-    
-                        activeWordIndex = i;
-                        words[i].damage(letter);
-    
-                        return;
-                    }
+                // word database
+                const wordList = ['door', 'pen', 'half', 'hotel', 'run', 'rush', 'zero'];
+                
+                const words = [];
+                let score = 0;
+                let scoreElement = document.getElementById("score");
+            
+                // holds word index got hit until word dies
+                let activeWordIndex = null;
+                
+                for (let i=0; i<maxWordCount; i++) {
+                    const word = new Word(randomWord());
                     
+                    // bind events
+                    word.onDie = onWordDies;
+                    word.onHit = onWordHits;
+                    
+                    words[i] = word;
+                    
+                    setTimeout(function(){
+                        word.attack();
+                    }, 1000 * i);
                 }
-            } else {
-                if(words[activeWordIndex].letters[0] === letter) {
-                    incrementScore();
-                    words[activeWordIndex].damage(letter);
+                
+                document.addEventListener("keyup", heroAttack);
+                
+                
+                function randomWord(){
+                    return wordList[ helper.random(0, wordList.length) ];
                 }
+            
+                // callled when a word dies
+                function onWordDies(word) {
+                    activeWordIndex = null;
+            
+                    word.reset(randomWord());
+                }
+            
+                // called when a word reaches to hero
+                function onWordHits(word) {
+                    for (let i = 0; i < words.length; i++) {
+                        // stop every words animations
+                        words[i].stop();
+                    }
+            
+                    // animations needs time to stop
+                    setTimeout(function() {
+                        // get the score to send in participations controller
+                        const score   = document.getElementById("score").innerText;
+                        const gameId  = document.getElementById("game-id").dataset.id;
+                        const boardId = document.getElementById("board-id").dataset.id;
+                        createParticipation(gameId, boardId, score);
+                        alert(`GAME OVER! SCORE ${score}`)
+                        window.location.reload();
+                    }, 10);
+                }
+            
+                function heroAttack(e) {
+                    const letter = String.fromCharCode(e.keyCode).toLowerCase();
+            
+                    if(activeWordIndex === null) {
+                        for (let i = 0; i < words.length; i++) {
+                            if(words[i].letters[0] === letter) {
+                                incrementScore();
+            
+                                activeWordIndex = i;
+                                words[i].damage(letter);
+            
+                                return;
+                            }
+                            
+                        }
+                    } else {
+                        if(words[activeWordIndex].letters[0] === letter) {
+                            incrementScore();
+                            words[activeWordIndex].damage(letter);
+                        }
+                    }
+                }
+            
+                function incrementScore() {
+                    score++;
+            
+                    scoreElement.innerText = score;
+                }
+        
             }
-        }
-    
-        function incrementScore() {
-            score++;
-    
-            scoreElement.innerText = score;
-        }
-
+        })
     }
 };
 
