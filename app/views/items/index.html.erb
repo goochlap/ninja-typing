@@ -1,21 +1,32 @@
-<h1>SHOP - Items#index -</h1>
-<br>
-<% @items.each do |item| %>
-  <ul><h3>- <%= item.name.capitalize %></h3></ul>
-<% end %>
-
-
-<div class="container-cards">
-  <% @items.each do |item| %>
-    <div class="card-trip">
-      <img src="<%= item.image %>">
-      <div class="card-trip-infos">
-        <div>
-          <h2><%= item.name %></h2>
-        </div>
-        <p class="card-trip-user avatar-bordered"><%= item.price %>c</p>
-        <%= link_to 'aheter', avatar_items_path(avatar_id: current_user.avatar, item_id: item.id), method: :post %>
-      </div>
+<div class="bakcground-card">
+  <div class="shop">
+    <div class="style-shop"><h1>shop</h1></div>
+  </div>
+  <% @categories.each do |category| %>
+    <div class="name-categories">
+      <h1><%= category.name %></h1><hr>
     </div>
+      <div class="container-cards">
+        <% @items.where(category: category.id).each do |item| %>
+          <div class="card-trip">
+            <img src="<%= item.image %>">
+            <div class="card-trip-infos">
+              <div class="weapon-name">
+                <h2><%= item.name %></h2>
+              </div>
+                <div>
+                  <p class="card-trip-user avatar-bordered"><%= item.price %>💰</p>
+                </div>
+                  <div class="soldout">
+                    <% if AvatarItem.exists?(item_id: item.id, avatar_id: current_user.avatar.id) %>
+                    <%= render inline:"<p>deja acheté</p>"%>
+                    <% else %>
+                    <%= link_to 'acheter', avatar_items_path(avatar_id: current_user.avatar, item_id: item.id), method: :post %>
+                    <% end %>
+                  </div>
+            </div>
+          </div>
+          <% end %>
+      </div>
   <% end %>
 </div>

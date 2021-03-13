@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_27_141950) do
+ActiveRecord::Schema.define(version: 2021_03_11_180544) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2021_02_27_141950) do
     t.bigint "item_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "choosen", default: false
     t.index ["avatar_id"], name: "index_avatar_items_on_avatar_id"
     t.index ["item_id"], name: "index_avatar_items_on_item_id"
   end
@@ -41,6 +42,10 @@ ActiveRecord::Schema.define(version: 2021_02_27_141950) do
     t.index ["avatar_id"], name: "index_boards_on_avatar_id"
   end
 
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+  end
+
   create_table "games", force: :cascade do |t|
     t.string "position"
     t.datetime "created_at", precision: 6, null: false
@@ -54,6 +59,8 @@ ActiveRecord::Schema.define(version: 2021_02_27_141950) do
     t.string "image"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "category_id", null: false
+    t.index ["category_id"], name: "index_items_on_category_id"
   end
 
   create_table "participations", force: :cascade do |t|
@@ -83,6 +90,7 @@ ActiveRecord::Schema.define(version: 2021_02_27_141950) do
   add_foreign_key "avatar_items", "items"
   add_foreign_key "avatars", "users"
   add_foreign_key "boards", "avatars"
+  add_foreign_key "items", "categories"
   add_foreign_key "participations", "boards"
   add_foreign_key "participations", "games"
 end

@@ -280,6 +280,11 @@ a {
     left: 994px;
     top: 48px;
     animation: fadein 3s;
+    background-image: url("/image/landscapejapan.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: top 64px right 52px;
+
 
 @keyframes fadein {
     from {
@@ -296,14 +301,13 @@ a {
 ////////////////////////////////////////CARD//////////////////////////////////
 #backpack li.card{
 
-  margin: 6px;
+  margin: 16px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.125);
   height: auto;
   text-align: center;
   color: black;
   position: relative;
   display: flex;
-  background-color: #fff;
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 8px;
 }
@@ -365,6 +369,9 @@ button#pocket.menu-item.blue{
 @media(max-width: 992px) {
   .menu-ninja{
     left: 140px;
+  }
+  #backpack {
+    left: 644px;
   }
 }
 

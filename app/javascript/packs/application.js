@@ -33,6 +33,8 @@ import { setTimeOut } from '../components/set_time_out';
 import { initHelper } from '../game/helper'
 
 
+
+
 document.addEventListener('turbolinks:load', () => {
     setTimeOut();
     avatarMoving();
