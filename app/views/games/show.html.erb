@@ -1,11 +1,26 @@
 <h1><%= @game.name %></h1>
-<br> 
+<br>
 
+<button class="play-btn btn btn-primary btn-lg" data-level="<%= params[:level] %>">PLAY</button>
+<br>
+<br>
+
+<h2>--Best results--</h2>
+<% index = 0 %>
 <% if @game.participations.count >= 1 %>
-  <% @game.participations.each do |participation| %>
-    <li>Your score(s)<%= participation.finished_in %></li>
+  <% scores = @game.participations.sort_by { |participation| participation[:finished_in].to_i } %>
+  <% scores.reverse[0..2].each do |score| %>
+    <li><%= index += 1 %>. Your score(s) <%= score.finished_in %></li>
   <% end %>
 <% end %>
 
+<%= current_user.avatar.wallet %>
+
+<div id="ws-wrapper">
+    <div class="hero"></div>
+    <div id="score"></div>
+</div>
 <br>
-<%= link_to 'PLAY!', participations_path(game_id: @game, board_id: current_user.avatar.board), method: :post %>
+
+<span class="d-none" id="game-id" data-id="1"></span>
+<span class="d-none" id="board-id" data-id="<%= current_user.avatar.board.id %>"></span>

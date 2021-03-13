@@ -1,6 +1,20 @@
 <h1>This is <strong><%= current_user.name.capitalize %></strong>'s boards</h1>
+<br>
+<br>
+<h1><strong><%= @games.first.name %></strong></h1>
 
-<% @games.each do |game| %>
-  <li><%= link_to game.name, game_path(game) %></li>
-<% end %>
+<br>
+<%= link_to "Level 1", game_path(@games.first.id, level: 1), class:"difficulty-btn btn btn-primary btn-lg", id: 'game-show' %>
+<%= link_to "Level 2", game_path(@games.first.id, level: 2), class:"difficulty-btn btn btn-primary btn-lg", id: 'game-show' %>
+<%= link_to "Level 3", game_path(@games.first.id, level: 3), class:"difficulty-btn btn btn-primary btn-lg", id: 'game-show' %>
+<%= link_to "Level 4", game_path(@games.first.id, level: 4), class:"difficulty-btn btn btn-primary btn-lg", id: 'game-show' %>
+
+<%= link_to @games.first.name, game_path(@games.first.id, level: 1), class:"difficulty-btn btn btn-primary btn-lg", id: 'game-show2' %>
+<%= link_to @games.first.name, game_path(@games.first.id, level: 2), class:"difficulty-btn btn btn-primary btn-lg", id: 'game-show2' %>
+<%= link_to @games.first.name, game_path(@games.first.id, level: 3), class:"difficulty-btn btn btn-primary btn-lg", id: 'game-show2' %>
+<%= link_to @games.first.name, game_path(@games.first.id, level: 4), class:"difficulty-btn btn btn-primary btn-lg", id: 'game-show2' %>
+
+<nav id="nav-bar">
+  <%= image_tag "ninja-github2.png", height: '200px', id: 'menu-button' %>
+</nav>
 

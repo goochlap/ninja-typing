@@ -1,33 +1,32 @@
-import helper from './helper.js';
+import {initHelper} from './helper';
 
 export default class Word {
     constructor(word) {
         // events
         this.onDie = null;
         this.onHit = null;
-
+        
         this.init(word);
         this.createElement();
         this.resetStartPosition();
     }
-
+    
     // sets Word's properties
     init(word) {
         this.word = word;
         this.letters = word.split("");
-
+        
         // if DOM element crated, change it's innerText
         if(this.el) {
             this.el.innerText = this.word;
         }
     }
-
+    
     createElement() {
         this.el = document.createElement("div");
         this.el.innerText = this.word;
         this.el.classList.add("word");
-
-        helper.wrapper.append(this.el);
+        initHelper().wrapper.append(this.el);
     
         // set margin to center element in the view
         this.el.style.margin = `-${this.el.offsetHeight/2}px 0 0 -${this.el.offsetWidth/2}px`;
@@ -35,11 +34,11 @@ export default class Word {
 
     resetStartPosition() {
         // a random angle of entrance to view
-        this.angle = helper.random(0, 360);
+        this.angle = initHelper().random(0, 360);
 
         // some trigonometry
-        const x = Math.sin(this.angle * (Math.PI / 180)) * helper.radius;
-        const y = Math.cos(this.angle * (Math.PI / 180)) * helper.radius;
+        const x = Math.sin(this.angle * (Math.PI / 180)) * initHelper().radius;
+        const y = Math.cos(this.angle * (Math.PI / 180)) * initHelper().radius;
 
         // move element to x,y
         this.elTransform = `translate(${x}px, ${y}px)`;
@@ -57,9 +56,21 @@ export default class Word {
             offset: 1,
             transform: `rotate(${180 - this.angle}deg) translate(0,0)`
         }];
-
+        
+        // set difficulty
+        const btnPlay = document.querySelector(".play-btn");
+        let speed;
+        if (btnPlay.dataset.level == "1") {
+            speed = 20000
+        } else if (btnPlay.dataset.level == "2") {
+            speed = 15000
+        } else if (btnPlay.dataset.level == "3") {
+            speed = 10000
+        } else {
+            speed = 7500
+        }
         this.attackAnimation = this.el.animate(sequence, {
-            duration: 20000,
+            duration: speed,
             delay: 0
         });
 
