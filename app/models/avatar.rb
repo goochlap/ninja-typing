@@ -1,5 +1,5 @@
 class Avatar < ApplicationRecord
-  before_save :default_values
+  before_create :default_values
   belongs_to :user
 
   has_one :board, dependent: :destroy

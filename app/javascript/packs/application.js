@@ -29,26 +29,14 @@ import "bootstrap";
 // import { initSelect2 } from '../components/init_select2';
 import { play } from "../game/ws";
 import { avatarMoving } from "../gameboard/game_index";
+import { setTimeOut } from '../components/set_time_out';
+
 
 document.addEventListener('turbolinks:load', () => {
-  // Call your functions here, e.g:
-  // initSelect2();
-  play();
-  avatarMoving();
+    setTimeOut();
+    avatarMoving();
+    play();
 });
 
-// set time out for notice messages
-$(function(){
-  const flashDurationInSeconds = 4;
-  const flashContainerId = 'flash-message';
-
-  function removeFlashMessages() {
-    $('#' + flashContainerId).remove();
-  }
-
-  setTimeout(removeFlashMessages, flashDurationInSeconds * 1000);
-})
-
-
-
+// btn play game #1
 

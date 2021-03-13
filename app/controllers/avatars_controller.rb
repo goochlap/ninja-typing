@@ -40,6 +40,6 @@ class AvatarsController < ApplicationController
   end
 
   def avatar_params
-    params.require(:avatar).permit(:name, :gender)
+    params.require(:avatar).permit(:name, :gender, :wallet)
   end
 end

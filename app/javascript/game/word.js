@@ -5,28 +5,27 @@ export default class Word {
         // events
         this.onDie = null;
         this.onHit = null;
-
+        
         this.init(word);
         this.createElement();
         this.resetStartPosition();
     }
-
+    
     // sets Word's properties
     init(word) {
         this.word = word;
         this.letters = word.split("");
-
+        
         // if DOM element crated, change it's innerText
         if(this.el) {
             this.el.innerText = this.word;
         }
     }
-
+    
     createElement() {
         this.el = document.createElement("div");
         this.el.innerText = this.word;
         this.el.classList.add("word");
-
         helper.wrapper.append(this.el);
     
         // set margin to center element in the view
