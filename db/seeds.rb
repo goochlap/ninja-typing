@@ -11,6 +11,7 @@
 # Board.destroy_all
 
 puts "Cleaning database..."
+User.destroy_all
 AvatarItem.destroy_all
 Item.destroy_all
 

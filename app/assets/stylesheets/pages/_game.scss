@@ -30,3 +30,31 @@
   font-size: 40px;
   font-weight: bold;
 }
+
+// board's games
+#game-show2 {
+  display: none;
+}
+
+#nav-bar {
+  height: 60px;
+}
+
+nav #menu-button2 {
+  margin: 20px 150vh;
+  display: inline;
+  
+  /* Width and height hack to represent missing image's height and width */
+  width: 60px;
+  height: 60px;
+  
+  /* CSS Transition added */
+  -webkit-transition: margin-left 2.5s;
+  transition: margin-left 2.5s;
+}
+
+#menu-button {
+  margin: 20px 0;
+  width: 60px;
+  height: 60px;
+}
