@@ -56,9 +56,21 @@ export default class Word {
             offset: 1,
             transform: `rotate(${180 - this.angle}deg) translate(0,0)`
         }];
-
+        
+        // set difficulty
+        const btnPlay = document.querySelector(".play-btn");
+        let speed;
+        if (btnPlay.dataset.level == "1") {
+            speed = 20000
+        } else if (btnPlay.dataset.level == "2") {
+            speed = 15000
+        } else if (btnPlay.dataset.level == "3") {
+            speed = 10000
+        } else {
+            speed = 7500
+        }
         this.attackAnimation = this.el.animate(sequence, {
-            duration: 20000,
+            duration: speed,
             delay: 0
         });
 
