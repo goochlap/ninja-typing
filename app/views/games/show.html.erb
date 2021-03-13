@@ -1,12 +1,11 @@
 <h1><%= @game.name %></h1>
 <br>
 
-<button class="play-btn btn btn-primary btn-lg">PLAY</button>
+<button class="play-btn btn btn-primary btn-lg" data-level="<%= params[:level] %>">PLAY</button>
 <br>
 <br>
 
 <h2>--Best results--</h2>
-
 <% index = 0 %>
 <% if @game.participations.count >= 1 %>
   <% scores = @game.participations.sort_by { |participation| participation[:finished_in].to_i } %>

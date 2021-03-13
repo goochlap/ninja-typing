@@ -3,15 +3,25 @@ import { initHelper } from './helper';
 import { createParticipation } from '../components/fetch_score_game';
     
 const play = () => {
+    
     const btnPlay = document.querySelector(".play-btn");
     if(btnPlay) {
         btnPlay.addEventListener('click', () => {
             btnPlay.style.display = 'none';
             if (document.querySelector('#ws-wrapper') != null) {
                 const maxWordCount = 5; // maximum word count attacking
-            
+                let wordList
+                
                 // word database
-                const wordList = ['door', 'pen', 'half', 'hotel', 'run', 'rush', 'zero'];
+                if (btnPlay.dataset.level == "1") {
+                    wordList = ['ame', 'ben', 'coq', 'dan', 'elf', 'fac', 'gin', 'jeu', 'lui', 'mon', 'vis', 'yin'];
+                } else if (btnPlay.dataset.level == "2") {
+                    wordList = ['ames', 'bens', 'coqs', 'dans', 'elfs', 'facs', 'gins', 'jeus', 'luis', 'mons', 'viss', 'yins'];
+                } else if (btnPlay.dataset.level == "3") {
+                    wordList = ['amess', 'benss', 'coqss', 'danss', 'elfss', 'facss', 'ginss', 'jeuss', 'luiss', 'monss', 'visss', 'yinss'];
+                } else {
+                    wordList = ['ameddd', 'benddd', 'coqddd', 'danddd', 'elfddd', 'facddd', 'ginddd', 'jeuddd', 'luiddd', 'monddd', 'visddd', 'yinddd'];
+                }
                 
                 const words = [];
                 let score = 0;
