@@ -1,4 +1,4 @@
-import helper from './helper.js';
+import {initHelper} from './helper';
 
 export default class Word {
     constructor(word) {
@@ -26,7 +26,7 @@ export default class Word {
         this.el = document.createElement("div");
         this.el.innerText = this.word;
         this.el.classList.add("word");
-        helper.wrapper.append(this.el);
+        initHelper().wrapper.append(this.el);
     
         // set margin to center element in the view
         this.el.style.margin = `-${this.el.offsetHeight/2}px 0 0 -${this.el.offsetWidth/2}px`;
@@ -34,11 +34,11 @@ export default class Word {
 
     resetStartPosition() {
         // a random angle of entrance to view
-        this.angle = helper.random(0, 360);
+        this.angle = initHelper().random(0, 360);
 
         // some trigonometry
-        const x = Math.sin(this.angle * (Math.PI / 180)) * helper.radius;
-        const y = Math.cos(this.angle * (Math.PI / 180)) * helper.radius;
+        const x = Math.sin(this.angle * (Math.PI / 180)) * initHelper().radius;
+        const y = Math.cos(this.angle * (Math.PI / 180)) * initHelper().radius;
 
         // move element to x,y
         this.elTransform = `translate(${x}px, ${y}px)`;
