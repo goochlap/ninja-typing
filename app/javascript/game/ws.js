@@ -1,5 +1,5 @@
 import Word from './word.js';
-import helper from './helper.js';
+import { initHelper } from './helper';
 import { createParticipation } from '../components/fetch_score_game';
     
 const play = () => {
@@ -38,7 +38,7 @@ const play = () => {
                 
                 
                 function randomWord(){
-                    return wordList[ helper.random(0, wordList.length) ];
+                    return wordList[ initHelper().random(0, wordList.length) ];
                 }
             
                 // callled when a word dies
