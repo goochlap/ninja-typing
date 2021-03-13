@@ -7,7 +7,7 @@
 
 .ninja{
     background-repeat: no-repeat;
-    margin-left: 566px;
+    left: 566px;
     background-image: url("/image/ninja2.png");
     background-size: contain;
     width: 329px;
@@ -15,15 +15,53 @@
     position: absolute;
 }
 
+
+
 .righthand{
     background-position: left;
     height: 149px;
     background-repeat: no-repeat;
-    background-image: url("");
     background-size: contain;
-    width: 277px;
+    width: 294px;
     position: absolute;
-    top: 154px;
+    top: 150px;
     transform: rotate(-20deg);
-    left: 662px;
+    left: 669px;
+}
+
+.leftthand {
+    background-position: left;
+    height: 149px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 141px;
+    position: absolute;
+    top: 228px;
+    left: 631px;
+    transform: scaleX(-1.5) scaleY(1.5) rotate(17deg);
+
+}
+
+@media(max-width: 992px) {
+  .ninja{
+    left: 266px;
+  }
+  .righthand{
+    left: 369px;
+  }
+  .leftthand{
+    left: 331px;
+  }
+}
+
+@media(max-width: 768px) {
+  .ninja {
+    left: 166px;
+  }
+  .righthand{
+    left: 269px;
+  }
+  .leftthand {
+    left: 231px;
+  }
 }
