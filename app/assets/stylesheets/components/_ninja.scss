@@ -19,28 +19,75 @@
 
 .righthand{
     background-position: left;
-    height: 149px;
+    height: 180px;
     background-repeat: no-repeat;
     background-size: contain;
-    width: 294px;
+    width: 290px;
     position: absolute;
-    top: 150px;
+    top: 131px;
     transform: rotate(-20deg);
-    left: 669px;
+    left: 674px;
+
 }
 
 .leftthand {
     background-position: left;
-    height: 149px;
+    height: 158px;
     background-repeat: no-repeat;
     background-size: contain;
-    width: 141px;
+    width: 164px;
     position: absolute;
-    top: 228px;
-    left: 631px;
+    top: 226px;
+    left: 602px;
     transform: scaleX(-1.5) scaleY(1.5) rotate(17deg);
 
 }
+.ribbon {
+    background-position: left;
+    height: 149px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 198px;
+    position: absolute;
+    left: 556px;
+    transform: scaleX(-1.5) scaleY(1.5) rotate(17deg);
+    bottom: 412px;
+
+}
+
+.badge_ninja {
+    background-position: left;
+    height: 149px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 107px;
+    position: absolute;
+    left: 685px;
+    transform: scale(2) rotate(3deg);
+    bottom: 314px;
+    opacity: 0.5;
+  }
+
+  hr {
+    border: 1px solid #9D4948;
+    opacity: 0.5;
+    width: 866px;
+  }
+
+.name-categories h1 {
+  text-align: center;
+}
+
+.style-shop {
+    height: 150px;
+    margin-bottom: 143px !important;
+    margin: auto;
+    width: 750px;
+    padding: 35px;
+    border: 1px solid black;
+    background-image: url(/image/backgroundtitleshop.png);
+
+  }
 
 @media(max-width: 992px) {
   .ninja{

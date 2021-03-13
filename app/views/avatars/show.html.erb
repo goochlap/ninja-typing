@@ -47,12 +47,18 @@
   </div>
 
    <div class="ninja"></div>
-   <div class="righthand" style="background-image: url(<%= @avatar.items.last.image if @avatar.items.present? %>);"></div>
-   <div class="leftthand" style="background-image: url(<%= @avatar.items.last.image if @avatar.items.present? %>);"></div>
+   <% if @avatar_item_image  %>
+     <div class="righthand" style="background-image: url(<%= @avatar_weapon_image %>);"></div>
+     <div class="leftthand" style="background-image: url(<%= @avatar_weapon_image %>);"></div>
+     <div class="ribbon" style="background-image: url(<%= @avatar_ribbon_image %>);"></div>
+     <div class="badge_ninja" style="background-image: url(<%= @avatar_badge_image %>);"></div>
+
+   <% end %>
+
    <div id="backpack">
      <h1>Sac a dos</h1><hr>
         <ul><% @avatar.items.each do |item| %>
-          <li class="card"><%= item.name %><%= link_to 'utiliser', avatar_items_path(avatar_id: current_user.avatar, item_id: item.id), method: :post %>
+          <li class="card"><%= item.name %><%= link_to 'utiliser',   validate_avatar_item_path(avatar_id: current_user.avatar, item_id: item.id), method: :post %>
           <img src="<%= item.image %>">
           </li>
         <% end %>

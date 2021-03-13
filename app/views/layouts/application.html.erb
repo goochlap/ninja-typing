@@ -10,6 +10,9 @@
 
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
     <script type="module" src="ws.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Mate+SC&family=Rubik+Mono+One&display=swap" rel="stylesheet">
   </head>
 
   <body>
@@ -19,8 +22,8 @@
     <div class="main">
       <%= yield %>
     </div>
-    
-    <%= render 'shared/footer' %> 
+
+    <%= render 'shared/footer' %>
 
   </body>
 </html>

@@ -1,32 +1,44 @@
 .container-cards {
-  margin: 0 auto;
-  align-items: center;
-  justify-content: space-around;
-  font-family: Open-sans, sans-serif;
-  flex-grow: 1;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr ;
-  grid-gap: 18px;
-  padding: 1px;
+    width: 843px;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: space-around;
+    font-family: Open-sans, sans-serif;
+    flex-grow: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 39px;
+    padding: 31px;
 }
 
 .card-trip {
   overflow: hidden;
-  background: white;
+  background-image: url(wooden-texture.jpg);
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  height: 313px;
+  animation: zoominout 1.5s ;
+}
+  @keyframes zoominout {
+    0% {
+        transform: scale(0);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+
+.cardcontainer img {
+}
 }
 
 .card-trip > img {
   height: 200px;
   width: 100%;
-  background-color: rgb(221, 221, 221);
+  background-color: white;
 }
 
-.card-trip h2 {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0;
-}
 
 .card-trip p {
   font-size: 27px;
@@ -35,27 +47,24 @@
 }
 
 .card-trip .card-trip-infos {
-  padding: 60px;
+  padding: 19px;
   display: flex;
   justify-content: center;
   align-items: flex-end;
   position: relative;
+  flex-direction: column;
 }
 
 .card-trip-infos .card-trip-user {
   position: absolute;
   right: 17px;
-  top: -20px;
   width: 73px;
   text-align: center;
+  bottom: 74px;
+  color: gold;
+  text-shadow: 0px 2px 4px black;
 }
 
-.avatar-bordered {
-  width: 40px;
-  border-radius: 50%;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
-  border: black 1px solid;
-}
 
 .button{
   position: absolute;
@@ -64,3 +73,76 @@
   width: 104px;
   border-radius: 22px;
 }
+
+.soldout p {
+    position: absolute;
+    right: 15px;
+    width: 338px;
+    text-align: center;
+    bottom: 142px;
+    transform: rotate(-22deg);
+    font-size: 57px;
+    color: #07f432;
+    text-shadow: 9px;
+    text-shadow: 4px 8px 8px green;
+}
+
+.soldout a {
+    position: absolute;
+    right: 140px;
+    top: 70px;
+    border: 2px solid #9d4948;
+    border-radius: 13px;
+    width: 85px;
+    text-align: center;
+}
+
+.soldout a:hover {
+  background-color: #9d4948;
+  color: white;
+}
+
+.weapon-name h2 {
+    width: 328px;
+    text-align: center;
+    font-size: 29px;
+    font-weight: bold;
+    margin: 0;
+    font-family: 'Mate SC', serif;
+    color: white;
+    text-shadow: 2px 2px black;
+  }
+//////////////////////////////////shop///////////////////////////:
+
+.shop {
+  text-align: center
+}
+
+
+.shop h1 {
+  font-size: 76px;
+  font-family: $my-font;
+  margin-bottom: 200px;
+}
+
+.bakcground-card{
+    background-image: url("/image/backgroundshop.png");
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+@media(max-width: 992px) {
+  .container-cards{
+    grid-template-columns: 1fr 1fr;
+  }
+
+}
+
+@media(max-width: 768px) {
+  .container-cards {
+    grid-template-columns: 1fr;
+  }
+
+}
+

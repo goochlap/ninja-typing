@@ -7,10 +7,14 @@ Rails.application.routes.draw do
   resources :users do
     resources :avatars, only: %i[ new create show edit update ] do
       resources :boards, only: %i[ show ]
-    end 
+    end
   end
   resources :games, only: %i[ show ]
-  resources :avatar_items, only: %i[ create ]
+  resources :avatar_items, only: %i[ create ] do
+    member do
+      post 'validate'
+    end
+  end
   resources :items
   resources :participations, only: %i[ create ]
 end
