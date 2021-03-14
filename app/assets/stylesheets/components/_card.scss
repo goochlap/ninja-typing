@@ -28,9 +28,6 @@
     100% {
         transform: scale(1);
     }
-
-.cardcontainer img {
-}
 }
 
 .card-trip > img {
@@ -130,6 +127,107 @@
     background-size: cover;
     background-attachment: fixed;
     background-repeat: no-repeat;
+}
+  hr {
+    border: 1px solid #9D4948;
+    opacity: 0.5;
+    width: 866px;
+  }
+
+.name-categories h1 {
+  text-align: center;
+}
+
+.style-shop {
+    height: 150px;
+    margin-bottom: 143px !important;
+    margin: auto;
+    width: 750px;
+    padding: 35px;
+    border: 1px solid black;
+    background-image: url(/image/backgroundtitleshop.png);
+
+  }
+
+.link {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0px 272px;
+    margin-top: 90px;
+    margin-bottom: 10px;
+}
+
+.link a{
+
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+  font-size: 20px;
+  font-family: 'Oleo Script', cursive;
+}
+
+a.btn-shop-center {
+
+   margin-right: 64px;
+}
+
+ a.btn-shop-center:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  display: inline-block;
+  height: 1em;
+  width: 100%;
+  border-bottom: 1px solid;
+  margin-top: 10px;
+  opacity: 0;
+  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+  transition: opacity 0.35s, transform 0.35s;
+  -webkit-transform: scale(0,1);
+  transform: scale(0.5,2);
+}
+
+ a.btn-shop-center:hover:after {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+
+a.btn-shop-left:after{
+    content: '<<';
+    position: absolute;
+    left: -30px;
+    display: inline-block;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.25s, transform 0.25s;
+    transform: scale(0.5, 3);
+
+}
+
+a.btn-shop-left:hover:after {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+
+a.btn-shop-right:after{
+    content: '>>';
+    position: absolute;
+    left: 64px;
+    display: inline-block;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.25s, transform 0.25s;
+    transform: scale(3, 1);
+
+}
+
+a.btn-shop-right:hover:after {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  transform: scale(1);
 }
 
 @media(max-width: 992px) {

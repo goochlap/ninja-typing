@@ -68,26 +68,11 @@
     opacity: 0.5;
   }
 
-  hr {
-    border: 1px solid #9D4948;
-    opacity: 0.5;
-    width: 866px;
+  .play-button{
+    text-align: center;
+    margin-top: 31px;
   }
 
-.name-categories h1 {
-  text-align: center;
-}
-
-.style-shop {
-    height: 150px;
-    margin-bottom: 143px !important;
-    margin: auto;
-    width: 750px;
-    padding: 35px;
-    border: 1px solid black;
-    background-image: url(/image/backgroundtitleshop.png);
-
-  }
 
 @media(max-width: 992px) {
   .ninja{
@@ -97,7 +82,13 @@
     left: 369px;
   }
   .leftthand{
-    left: 331px;
+    left: 304px;
+  }
+  .ribbon{
+    left: 253px;
+  }
+  .badge_ninja {
+    left: 385px;
   }
 }
 
@@ -109,6 +100,12 @@
     left: 269px;
   }
   .leftthand {
-    left: 231px;
+    left: 205px;
+  }
+  .ribbon{
+    left: 154px;
+  }
+  .badge_ninja {
+    left: 285px;
   }
 }
