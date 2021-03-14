@@ -30,7 +30,7 @@ import "bootstrap";
 import { play } from "../game/ws";
 import { avatarMoving } from "../gameboard/game_index";
 import { setTimeOut } from '../components/set_time_out';
-import { initHelper } from '../game/helper';
+import { initHelper } from '../game/helper'
 import { menu } from '../menu/menu'
 
 
