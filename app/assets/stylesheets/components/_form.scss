@@ -36,6 +36,14 @@
   left: 56px;
 }
 
+.edit-form{
+    background-image: url("/image/bakcgroundedit.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+
+}
+
 input:focus::placeholder {
   color: transparent;
 }
