@@ -49,6 +49,10 @@ badge_4 = { name: "god of gold", price: "50", image: "/image/badgegold.png", cat
   puts "Created #{item.name}"
 end
 
+puts 'Creating Game...'
+
+Game.create(name: 'Ninja Vs Words')
+
 
 puts "Finished!"
 
