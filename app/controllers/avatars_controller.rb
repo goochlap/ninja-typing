@@ -12,9 +12,6 @@ class AvatarsController < ApplicationController
     end
   end
 
-  def edit
-  end
-
   def new
     unless current_user.avatar.nil?
       flash[:notice] = "You Already have an Avatar!"
@@ -37,6 +34,8 @@ class AvatarsController < ApplicationController
       render :new
     end
   end
+
+  def edit; end
 
   def update
     @avatar.update(avatar_params)

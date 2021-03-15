@@ -1,5 +1,24 @@
-<%= simple_form_for [current_user, @avatar] do |f| %>
-  <%= f.input :name %>
-  <%= f.input :gender, collection: ['Male', 'Female'] %>
-  <%= f.button :submit, "Update" %>
-<% end %>
+<div class="new-avatar-form">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-sm-4 offset-sm-4">
+        <div class="form-login form-avatar-new">
+
+          <h2>Créer son Avatar</h2>
+            <%= simple_form_for [current_user, @avatar] do |f| %>
+
+              <div class="form-inputs">
+                <%= f.input :name, label: 'Nom', placeholder: 'O-Ren Ishii' %>
+                <%= f.input :gender, label: 'Genre', collection: ['Homme', 'Femme'] %>
+              </div>
+
+              <div class="form-actions">
+                <%= f.button :submit, "Créer Avatar", class: 'btn btn-primary' %>
+              </div>
+              <% end %>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
