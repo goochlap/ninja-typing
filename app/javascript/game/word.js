@@ -5,36 +5,36 @@ export default class Word {
         // events
         this.onDie = null;
         this.onHit = null;
-        
+
         this.init(word);
         this.createElement();
         this.resetStartPosition();
     }
-    
+
     // sets Word's properties
     init(word) {
         this.word = word;
         this.letters = word.split("");
-        
+
         // if DOM element crated, change it's innerText
         if(this.el) {
             this.el.innerText = this.word;
         }
     }
-    
+
     createElement() {
         this.el = document.createElement("div");
         this.el.innerText = this.word;
         this.el.classList.add("word");
         initHelper().wrapper.append(this.el);
-    
+
         // set margin to center element in the view
         this.el.style.margin = `-${this.el.offsetHeight/2}px 0 0 -${this.el.offsetWidth/2}px`;
     }
 
     resetStartPosition() {
         // a random angle of entrance to view
-        this.angle = initHelper().random(0, 360);
+        this.angle = initHelper().random(0, 90);
 
         // some trigonometry
         const x = Math.sin(this.angle * (Math.PI / 180)) * initHelper().radius;
@@ -44,7 +44,7 @@ export default class Word {
         this.elTransform = `translate(${x}px, ${y}px)`;
         // rotate to target
         this.elTransform += `rotate(${180 - this.angle}deg)`;
-        
+
         this.el.style.transform = this.elTransform;
     }
 
@@ -56,7 +56,7 @@ export default class Word {
             offset: 1,
             transform: `rotate(${180 - this.angle}deg) translate(0,0)`
         }];
-        
+
         // set difficulty
         const btnPlay = document.querySelector(".play-btn");
         let speed;
