@@ -89,8 +89,6 @@ a {
    top: 96px;
 }
 
-
-
 .menu-item {
    transition: all 0.1s ease 0s;
 }
@@ -259,32 +257,32 @@ a {
 }
 
 .red:hover {
-  background-color: #c90502;
+   background-color: #c90502;
    color: white;
    text-shadow: none;
 }
 
 
 .menu-ninja{
-    position: absolute;
-    top: 200px;
-    left: 169px;
+   position: absolute;
+   top: 200px;
+   left: 169px;
 }
+
 //////////////////////////////////BACKPACK//////////////////////////////////
 
 #backpack {
-    display: none;
-    height: 100%;
-    width: 317px;
-    position: absolute;
-    left: 994px;
-    top: 48px;
-    animation: fadein 3s;
-    background-image: url("/image/landscapejapan.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: top 64px right 52px;
-
+   display: none;
+   height: 100%;
+   width: 317px;
+   position: absolute;
+   left: 994px;
+   top: 48px;
+   animation: fadein 3s;
+   background-image: url("/image/landscapejapan.png");
+   background-size: contain;
+   background-repeat: no-repeat;
+   background-position: top 64px right 52px;
 
 @keyframes fadein {
     from {
@@ -338,10 +336,10 @@ a {
 }
 
 #backpack  img {
-    position: absolute;
-    width: 99px;
-    height: 37px;
-    transform: rotate(-16deg);
+   position: absolute;
+   width: 99px;
+   height: 37px;
+   transform: rotate(-16deg);
 }
 
 #backpack a {
@@ -368,17 +366,17 @@ button#pocket.menu-item.blue{
 
 @media(max-width: 992px) {
   .menu-ninja{
-    left: 140px;
+   left: 140px;
   }
   #backpack {
-    left: 644px;
+   left: 644px;
   }
 }
 
 @media(max-width: 768px) {
   .menu-ninja {
-    left: 10px;
-    top: 100px
+   left: 10px;
+   top: 100px
   }
 }
 
