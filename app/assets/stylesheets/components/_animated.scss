@@ -1,0 +1,35 @@
+.animated {
+    position: absolute;
+    top: 280px;
+    left: -100px;
+    -webkit-animation: spin-left 3s linear infinite;
+    animation: spin-left 3s linear infinite;
+    transform-origin: 39vmin;
+}
+
+/* ---------- Repeating styles for the inner orbiting circles ---------- */
+.Shuriken {
+  position: absolute;
+}
+/* ---------- Animation ---------- */
+@-webkit-keyframes spin-left {
+  100% {
+    -webkit-transform: rotate(-360deg);
+    -moz-transform: rotate(-360deg);
+    -ms-transform: rotate(-360deg);
+    -o-transform: rotate(-360deg);
+    transform: rotate(-360deg);
+  }
+}
+
+@media(max-width: 992px) {
+ .animated{
+  display: none;
+ }
+}
+
+@media(max-width: 768px) {
+ .animated{
+  display: none;
+ }
+  }

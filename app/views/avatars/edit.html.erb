@@ -8,9 +8,9 @@
             <%= simple_form_for [current_user, @avatar] do |f| %>
             <%= f.input :name, label: "Nom", placeholder: 'Nouveau nom' %>
             <%= f.input :gender, label: "Genre", collection: ['Homme', 'Femme'] %>
-          
+
             <div class="form-actions">
-            <%= f.button :submit, "Modifier", class: "btn btn-primary" %>
+            <%= f.button :submit , "Modifier", class: "btn btn-primary" %>
             </div>
          <% end %>
 
