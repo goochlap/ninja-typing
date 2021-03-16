@@ -1,33 +1,35 @@
+////////////////////////card //////////////////////////
+
 .container-cards {
-    width: 843px;
-    margin: 0 auto;
-    align-items: center;
-    justify-content: space-around;
-    font-family: Open-sans, sans-serif;
-    flex-grow: 1;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 39px;
-    padding: 31px;
+  width: 843px;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: space-around;
+  font-family: Open-sans, sans-serif;
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 39px;
+  padding: 31px;
 }
 
 .card-trip {
   overflow: hidden;
-  background-image: url(wooden-texture.jpg);
+  background-image: image-url("wooden-texture.jpg");
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   height: 313px;
   animation: zoominout 1.5s ;
 }
-  @keyframes zoominout {
-    0% {
-        transform: scale(0);
-    }
-    50% {
-        transform: scale(1.05);
-    }
-    100% {
-        transform: scale(1);
-    }
+@keyframes zoominout {
+  0% {
+      transform: scale(0);
+  }
+  50% {
+      transform: scale(1.05);
+  }
+  100% {
+      transform: scale(1);
+  }
 }
 
 .card-trip > img {
@@ -72,26 +74,26 @@
 }
 
 .soldout p {
-    position: absolute;
-    right: 15px;
-    width: 338px;
-    text-align: center;
-    bottom: 142px;
-    transform: rotate(-22deg);
-    font-size: 57px;
-    color: #07f432;
-    text-shadow: 9px;
-    text-shadow: 4px 8px 8px green;
+  position: absolute;
+  right: 15px;
+  width: 338px;
+  text-align: center;
+  bottom: 142px;
+  transform: rotate(-22deg);
+  font-size: 57px;
+  color: #07f432;
+  text-shadow: 9px;
+  text-shadow: 4px 8px 8px green;
 }
 
 .soldout a {
-    position: absolute;
-    right: 140px;
-    top: 70px;
-    border: 2px solid #9d4948;
-    border-radius: 13px;
-    width: 85px;
-    text-align: center;
+  position: absolute;
+  right: 140px;
+  top: 70px;
+  border: 2px solid #9d4948;
+  border-radius: 13px;
+  width: 85px;
+  text-align: center;
 }
 
 .soldout a:hover {
@@ -100,16 +102,16 @@
 }
 
 .weapon-name h2 {
-    width: 328px;
-    text-align: center;
-    font-size: 29px;
-    font-weight: bold;
-    margin: 0;
-    font-family: 'Mate SC', serif;
-    color: white;
-    text-shadow: 2px 2px black;
+  width: 328px;
+  text-align: center;
+  font-size: 29px;
+  font-weight: bold;
+  margin: 0;
+  font-family: 'Mate SC', serif;
+  color: white;
+  text-shadow: 2px 2px black;
   }
-//////////////////////////////////shop///////////////////////////:
+//////////////////////////////////shop////////////////////////////////
 
 .shop {
   text-align: center
@@ -123,15 +125,16 @@
 }
 
 .bakcground-card{
-    background-image: url("/image/backgroundshop.png");
-    background-size: cover;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
+  background-image: image-url("/image/backgroundshop.png");
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
-  hr {
-    border: 1px solid #9D4948;
-    opacity: 0.5;
-    width: 866px;
+
+hr {
+  border: 1px solid #9D4948;
+  opacity: 0.5;
+  width: 866px;
   }
 
 .name-categories h1 {
@@ -139,23 +142,24 @@
 }
 
 .style-shop {
-    height: 150px;
-    margin-bottom: 143px !important;
-    margin: auto;
-    width: 750px;
-    padding: 35px;
-    border: 1px solid black;
-    background-image: url(/image/backgroundtitleshop.png);
+  height: 150px;
+  margin-bottom: 143px !important;
+  margin: auto;
+  width: 750px;
+  padding: 35px;
+  border: 1px solid black;
+  background-image: image-url("/image/backgroundtitleshop.png");
 
   }
 
+///////////////////////////// hover on links//////////////////////////////////:
 .link {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin: 0px 272px;
-    margin-top: 90px;
-    margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0px 272px;
+  margin-top: 90px;
+  margin-bottom: 10px;
 }
 
 .link a{
@@ -195,14 +199,14 @@ a.btn-shop-center {
 }
 
 a.btn-shop-left:after{
-    content: '<<';
-    position: absolute;
-    left: -30px;
-    display: inline-block;
-    width: 100%;
-    opacity: 0;
-    transition: opacity 0.25s, transform 0.25s;
-    transform: scale(0.5, 3);
+  content: '<<';
+  position: absolute;
+  left: -30px;
+  display: inline-block;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 0.25s, transform 0.25s;
+  transform: scale(0.5, 3);
 
 }
 
@@ -213,14 +217,14 @@ a.btn-shop-left:hover:after {
 }
 
 a.btn-shop-right:after{
-    content: '>>';
-    position: absolute;
-    left: 64px;
-    display: inline-block;
-    width: 100%;
-    opacity: 0;
-    transition: opacity 0.25s, transform 0.25s;
-    transform: scale(3, 1);
+  content: '>>';
+  position: absolute;
+  left: 64px;
+  display: inline-block;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 0.25s, transform 0.25s;
+  transform: scale(3, 1);
 
 }
 

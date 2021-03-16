@@ -272,17 +272,18 @@ a {
 //////////////////////////////////BACKPACK//////////////////////////////////
 
 #backpack {
-   display: none;
-   height: 100%;
-   width: 317px;
-   position: absolute;
-   left: 994px;
-   top: 48px;
-   animation: fadein 3s;
-   background-image: url("/image/landscapejapan.png");
-   background-size: contain;
-   background-repeat: no-repeat;
-   background-position: top 64px right 52px;
+    display: none;
+    height: 100%;
+    width: 317px;
+    position: absolute;
+    left: 994px;
+    top: 48px;
+    animation: fadein 3s;
+    background-image: image-url("/image/landscapejapan.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: top 64px right 52px;
+
 
 @keyframes fadein {
     from {
@@ -318,6 +319,7 @@ a {
   opacity: 0.5;
   background-color: #9c4949;
   height: 2px;
+  width: 300px;
 }
 
 #backpack li.card li{
@@ -336,10 +338,10 @@ a {
 }
 
 #backpack  img {
-   position: absolute;
-   width: 99px;
-   height: 37px;
-   transform: rotate(-16deg);
+  position: absolute;
+  width: 99px;
+  height: 37px;
+  transform: rotate(-16deg);
 }
 
 #backpack a {
