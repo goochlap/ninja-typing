@@ -52,9 +52,10 @@ input:focus::placeholder {
 }
 
 .new-avatar-form {
-  background-image: url("/image/japan-bg-flowers.png");
+  background-image: url("/image/background_edit_avatar.png");
   background-repeat: no-repeat;
-  height: 100vh;
+  min-height: 100vh;
+  background-size: contain;
   .form-login {
     margin-top: 120px;
   }

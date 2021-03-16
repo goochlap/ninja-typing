@@ -1,17 +1,18 @@
 import Word from './word.js';
 import { initHelper } from './helper';
 import { createParticipation } from '../components/fetch_score_game';
-    
+
 const play = () => {
-    
+    const audio = new Audio('/musique/gamemusic.mp3');
     const btnPlay = document.querySelector(".play-btn");
     if(btnPlay) {
         btnPlay.addEventListener('click', () => {
+            audio.play();
             btnPlay.style.display = 'none';
             if (document.querySelector('#ws-wrapper') != null) {
                 const maxWordCount = 5; // maximum word count attacking
                 let wordList
-                
+
                 // word database
                 if (btnPlay.dataset.level == "1") {
                     wordList = ['ame', 'ben', 'coq', 'dan', 'elf', 'fac', 'gin', 'jeu', 'lui', 'mon', 'vis', 'yin'];
@@ -22,49 +23,49 @@ const play = () => {
                 } else {
                     wordList = ['ameddd', 'benddd', 'coqddd', 'danddd', 'elfddd', 'facddd', 'ginddd', 'jeuddd', 'luiddd', 'monddd', 'visddd', 'yinddd'];
                 }
-                
+
                 const words = [];
                 let score = 0;
                 let scoreElement = document.getElementById("score");
-            
+
                 // holds word index got hit until word dies
                 let activeWordIndex = null;
-                
+
                 for (let i=0; i<maxWordCount; i++) {
                     const word = new Word(randomWord());
-                    
+
                     // bind events
                     word.onDie = onWordDies;
                     word.onHit = onWordHits;
-                    
+
                     words[i] = word;
-                    
+
                     setTimeout(function(){
                         word.attack();
                     }, 1000 * i);
                 }
-                
+
                 document.addEventListener("keyup", heroAttack);
-                
-                
+
+
                 function randomWord(){
                     return wordList[ initHelper().random(0, wordList.length) ];
                 }
-            
+
                 // callled when a word dies
                 function onWordDies(word) {
                     activeWordIndex = null;
-            
+
                     word.reset(randomWord());
                 }
-            
+
                 // called when a word reaches to hero
                 function onWordHits(word) {
                     for (let i = 0; i < words.length; i++) {
                         // stop every words animations
                         words[i].stop();
                     }
-            
+
                     // animations needs time to stop
                     setTimeout(function() {
                         // get the score to send in participations controller
@@ -76,21 +77,21 @@ const play = () => {
                         window.location.reload();
                     }, 10);
                 }
-            
+
                 function heroAttack(e) {
                     const letter = String.fromCharCode(e.keyCode).toLowerCase();
-            
+
                     if(activeWordIndex === null) {
                         for (let i = 0; i < words.length; i++) {
                             if(words[i].letters[0] === letter) {
                                 incrementScore();
-            
+
                                 activeWordIndex = i;
                                 words[i].damage(letter);
-            
+
                                 return;
                             }
-                            
+
                         }
                     } else {
                         if(words[activeWordIndex].letters[0] === letter) {
@@ -99,13 +100,13 @@ const play = () => {
                         }
                     }
                 }
-            
+
                 function incrementScore() {
                     score++;
-            
+
                     scoreElement.innerText = score;
                 }
-        
+
             }
         })
     }
