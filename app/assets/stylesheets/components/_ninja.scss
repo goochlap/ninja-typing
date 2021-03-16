@@ -1,76 +1,78 @@
+//////////////////////////////ninja avatar////////////////////////////////////
+
 .ninjacontainer {
-    position: relative;
-    width: 100%;
-    height: 540px;
+  position: relative;
+  width: 100%;
+  height: 540px;
 }
 
 
 .ninja{
-    background-repeat: no-repeat;
-    left: 566px;
-    background-image: url("/image/ninja2.png");
-    background-size: contain;
-    width: 329px;
-    height: 590px;
-    position: absolute;
+  background-repeat: no-repeat;
+  left: 566px;
+  background-image: image-url("/image/ninja2.png");
+  background-size: contain;
+  width: 329px;
+  height: 590px;
+  position: absolute;
 }
 
 
 
 .righthand{
-    background-position: left;
-    height: 180px;
-    background-repeat: no-repeat;
-    background-size: contain;
-    width: 290px;
-    position: absolute;
-    top: 131px;
-    transform: rotate(-20deg);
-    left: 674px;
+  background-position: left;
+  height: 180px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 290px;
+  position: absolute;
+  top: 131px;
+  transform: rotate(-20deg);
+  left: 674px;
 
 }
 
 .leftthand {
-    background-position: left;
-    height: 158px;
-    background-repeat: no-repeat;
-    background-size: contain;
-    width: 164px;
-    position: absolute;
-    top: 226px;
-    left: 602px;
-    transform: scaleX(-1.5) scaleY(1.5) rotate(17deg);
+  background-position: left;
+  height: 158px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 164px;
+  position: absolute;
+  top: 226px;
+  left: 602px;
+  transform: scaleX(-1.5) scaleY(1.5) rotate(17deg);
 
 }
 .ribbon {
-    background-position: left;
-    height: 149px;
-    background-repeat: no-repeat;
-    background-size: contain;
-    width: 198px;
-    position: absolute;
-    left: 556px;
-    transform: scaleX(-1.5) scaleY(1.5) rotate(17deg);
-    bottom: 412px;
+  background-position: left;
+  height: 149px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 198px;
+  position: absolute;
+  left: 556px;
+  transform: scaleX(-1.5) scaleY(1.5) rotate(17deg);
+  bottom: 412px;
 
 }
 
 .badge_ninja {
-    background-position: left;
-    height: 149px;
-    background-repeat: no-repeat;
-    background-size: contain;
-    width: 107px;
-    position: absolute;
-    left: 685px;
-    transform: scale(2) rotate(3deg);
-    bottom: 314px;
-    opacity: 0.5;
+  background-position: left;
+  height: 149px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 107px;
+  position: absolute;
+  left: 685px;
+  transform: scale(2) rotate(3deg);
+  bottom: 314px;
+  opacity: 0.5;
   }
 
-  .play-button{
-    text-align: center;
-    margin-top: 31px;
+.play-button{
+  text-align: center;
+  margin-top: 31px;
   }
 
 

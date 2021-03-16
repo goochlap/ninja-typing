@@ -280,7 +280,7 @@ a {
     left: 994px;
     top: 48px;
     animation: fadein 3s;
-    background-image: url("/image/landscapejapan.png");
+    background-image: image-url("/image/landscapejapan.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: top 64px right 52px;
@@ -338,10 +338,10 @@ a {
 }
 
 #backpack  img {
-    position: absolute;
-    width: 99px;
-    height: 37px;
-    transform: rotate(-16deg);
+  position: absolute;
+  width: 99px;
+  height: 37px;
+  transform: rotate(-16deg);
 }
 
 #backpack a {
