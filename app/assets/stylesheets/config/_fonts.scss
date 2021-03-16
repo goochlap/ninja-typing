@@ -11,7 +11,7 @@ $headers-font: 'Poppins', sans-serif;
 // To use a font file (.woff) uncomment following lines
 @font-face {
   font-family: "Ninja";
-  src: url('fonts/aAsianNinja.otf');
+  src: asset-url('fonts/aAsianNinja.otf');
 //   font-family: "Font Name";
 //   src: font-url('FontFile.eot');
 //   src: font-url('FontFile.eot?#iefix') format('embedded-opentype'),
@@ -20,7 +20,7 @@ $headers-font: 'Poppins', sans-serif;
 }
 @font-face {
   font-family: "NinjaStrike";
-  src: url('fonts/NinjaStrike.otf');
+  src: asset-url('fonts/NinjaStrike.otf');
 }
 $my-font: "Ninja";
 $my-font2: "NinjaStrike";
