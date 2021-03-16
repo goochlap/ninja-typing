@@ -11,12 +11,11 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
-        <%# <li class="nav-item active"> %>
-          <%#= link_to "Accueil", root_path, class: "nav-link" %>
-        <%# </li> %>
         <li class="nav-item">
+          <%= link_to "JOUEZ!", user_avatar_board_path(current_user, current_user.avatar, current_user.avatar.board), class:'nav-link' %>
+        </li>
+        <li>
           <%= link_to "Magasin", items_path, class: "nav-link" %>
-          <div class="underbar"></div>
         </li>
         <% if current_user.avatar %>
         <li class="nav-item">
