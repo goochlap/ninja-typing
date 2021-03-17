@@ -19,12 +19,67 @@
     text-align: center;
     margin-top: 48px;
     font-family: $my-font2;
-    font-size: 44px;
+    font-size: 33px;
+  }
+  .best-results {
+    margin-bottom: 24px;
+  }
+  button {
+    display: block;
+    margin: auto;
   }
 }
 
 .rewards {
-  h2 {
-    font-size: 32px;
+  display: none;
+  height: 100%;
+  width: 317px;
+  position: absolute;
+  animation: fadein 2s;
+  background-image: image-url("japan-form.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  // background-position: top 64px right 52px;
+
+
+@keyframes fadein {
+    from {
+      opacity:0;
+      transform: translateX(-500px);
+    }
+    to {
+      opacity:1;
+      transform: translateX(0px);
+    }
   }
+}
+.rewards h2 {
+  font-size: 32px;
+  text-align: center;
+  margin-top: 102px;
+  margin-right: 10px;
+}
+
+.rewards #score {
+  position: absolute;
+  top: 136px;
+  right: 117px;
+  color: tomato;
+  font-size: 51px;
+  font-weight: bold;
+  width: 92px;
+  text-align: center;
+}
+
+.rewards .button-replay {
+  position: absolute;
+  bottom: 0;
+  left: 40px;
+  a {
+    margin-right: 14px;
+  }
+}
+
+.play-btn {
+  background-color: #E84648;
 }

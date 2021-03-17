@@ -5,23 +5,32 @@
   </div>
 
   <div class="row">
-    <div class="col-3 results-game">
-      <h2>✧✧ Scores ✧✧</h2>
-      <% index = 0 %>
-      <% if @game.participations.count >= 1 %>
-        <% scores = @game.participations.sort_by { |participation| participation[:finished_in].to_i } %>
-        <% scores.reverse[0..2].each do |score| %>
-          <li><%= index += 1 %>. Your score(s) <%= score.finished_in %></li>
-        <% end %>
-      <% end %>
+    <div class="col-3">
+
+      <div class="results-game">
+        <h2>✧ Meilleurs Scores ✧</h2>
+          <div class="best-results">
+            <% index = 0 %>
+            <% if @game.participations.count >= 1 %>
+              <% scores = @game.participations.sort_by { |participation| participation[:finished_in].to_i } %>
+              <% scores.reverse[0..2].each do |score| %>
+                <ul><%= index += 1 %># Score = <%= score.finished_in %></ul>
+              <% end %>
+            <% end %>
+          </div>
+        <button class="play-btn btn btn-primary btn-lg" data-level="<%= params[:level] %>">JOUER</button>
+      </div>
 
       <div class="rewards">
-        <h2>✧✧ Recompenses ✧✧</h2>
-        <%= current_user.avatar.wallet %>
+        <h2>✧ Score ✧</h2>
+          <div id="score"></div>
+          <div class="button-replay">
+            <%= link_to "MENU", user_avatar_board_path(current_user, current_user.avatar, current_user.avatar.board), class:'btn play-btn btn-primary btn-lg button-popup' %>
+            <button class="play-btn btn btn-primary btn-lg" id="button-popup">REJOUER</button>
+          </div>
       </div>
-      <br>
-      <br>
-      <button class="play-btn btn btn-primary btn-lg" data-level="<%= params[:level] %>">PLAY</button>
+
+      <%#= current_user.avatar.wallet %>
     </div>
     
     <div class="col">
