@@ -5,6 +5,34 @@
   z-index: 1;
 }
 
+.board-name{
+  width: 328px;
+  text-align: center;
+  left: 191px;
+  border-radius: 17px;
+  position: relative;
+  animation: board-name 2s;
+  background-image: image-url("/image/japanese-paper-texture.jpeg")
+
+}
+@keyframes board-name {
+    from {
+        opacity:0;
+
+    }
+    to {
+        opacity:1;
+    }
+  }
+
+.board-name h1 img {
+  width: 34px;
+  height: 55px;
+}
+
+.board-name h1 {
+  font-family: $my-font;
+}
 .background1 {
   background-image: image-url("/image/rightboard.png");
   position: absolute;
@@ -131,6 +159,8 @@
   left: 448px;
   top: 109px;
   animation: levelone 4.5s;
+  font-size: 30px;
+  font-family: $my-font;
 
 }
 
@@ -151,6 +181,8 @@
   left: 580px;
   top: 255px;
   animation: leveltwo 5.0s;
+  font-size: 30px;
+  font-family: $my-font;
 
 }
 
@@ -171,6 +203,8 @@
   left: 714px;
   top: 393px;
   animation: levelthree 5.5s;
+  font-size: 30px;
+  font-family: $my-font;
 
 }
 
@@ -191,6 +225,8 @@
   left: 856px;
   top: 526px;
   animation: levelfour 6s;
+  font-size: 30px;
+  font-family: $my-font;
 }
 
 @keyframes levelfour {
