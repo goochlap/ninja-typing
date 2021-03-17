@@ -1,28 +1,37 @@
-<%# regle du jeu %>
+<div class="container-game">
 
-<h1><%= @game.name %></h1>
-<br>
+  <div class="container-game-title">
+    <h1><%= @game.name %></h1>
+  </div>
 
-<button class="play-btn btn btn-primary btn-lg" data-level="<%= params[:level] %>">PLAY</button>
-<br>
-<br>
+  <div class="row">
+    <div class="col-3 results-game">
+      <h2>✧✧ Scores ✧✧</h2>
+      <% index = 0 %>
+      <% if @game.participations.count >= 1 %>
+        <% scores = @game.participations.sort_by { |participation| participation[:finished_in].to_i } %>
+        <% scores.reverse[0..2].each do |score| %>
+          <li><%= index += 1 %>. Your score(s) <%= score.finished_in %></li>
+        <% end %>
+      <% end %>
 
-<h2>--Best results--</h2>
-<% index = 0 %>
-<% if @game.participations.count >= 1 %>
-  <% scores = @game.participations.sort_by { |participation| participation[:finished_in].to_i } %>
-  <% scores.reverse[0..2].each do |score| %>
-    <li><%= index += 1 %>. Your score(s) <%= score.finished_in %></li>
-  <% end %>
-<% end %>
+      <div class="rewards">
+        <h2>✧✧ Recompenses ✧✧</h2>
+        <%= current_user.avatar.wallet %>
+      </div>
+      <br>
+      <br>
+      <button class="play-btn btn btn-primary btn-lg" data-level="<%= params[:level] %>">PLAY</button>
+    </div>
+    
+    <div class="col">
+      <div id="ws-wrapper">
+        <div class="hero"></div>
+        <div id="score"></div>
+      </div>
+    </div>
 
-<%= current_user.avatar.wallet %>
-
-<div id="ws-wrapper">
-    <div class="hero"></div>
-    <div id="score"></div>
+    <span class="d-none" id="game-id" data-id="1"></span>
+    <span class="d-none" id="board-id" data-id="<%= current_user.avatar.board.id %>"></span>
+  </div>
 </div>
-<br>
-
-<span class="d-none" id="game-id" data-id="1"></span>
-<span class="d-none" id="board-id" data-id="<%= current_user.avatar.board.id %>"></span>

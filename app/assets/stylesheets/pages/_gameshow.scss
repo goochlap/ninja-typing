@@ -1,0 +1,30 @@
+.container-game {
+  min-height: 100vh;
+  width: 100%;
+  .row {
+    min-height: 60vh;
+  }
+  .container-game-title {
+    text-align: center;
+    margin-top: 24px;
+  }
+  h1 {
+    font-family: $my-font2;
+    font-size: 95px;
+  }
+}
+
+.results-game {
+  h2 {
+    text-align: center;
+    margin-top: 48px;
+    font-family: $my-font2;
+    font-size: 44px;
+  }
+}
+
+.rewards {
+  h2 {
+    font-size: 32px;
+  }
+}
