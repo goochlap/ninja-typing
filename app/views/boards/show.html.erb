@@ -23,6 +23,7 @@
       <%= link_to "Level 3", game_path(@games.first.id, level: 3), class:"difficulty-btn btn btn-primary btn-lg", id: 'game-show' %>
       <%= link_to "Level 4", game_path(@games.first.id, level: 4), class:"difficulty-btn btn btn-primary btn-lg", id: 'game-show' %>
 
+
       <%= link_to @games.first.name, game_path(@games.first.id, level: 1), class:"difficulty-btn btn btn-primary btn-lg", id: 'game-show2' %>
       <%= link_to @games.first.name, game_path(@games.first.id, level: 2), class:"difficulty-btn btn btn-primary btn-lg", id: 'game-show2' %>
       <%= link_to @games.first.name, game_path(@games.first.id, level: 3), class:"difficulty-btn btn btn-primary btn-lg", id: 'game-show2' %>
@@ -37,3 +38,23 @@
       <a href="<%= user_avatar_path(current_user, current_user.avatar, current_user.avatar.board)  %>" class= "btn-shop-left" >Personnage</a>
       <a href="<%= items_path %>" class= "btn-shop-right" >shop</a>
     </div>
+
+<%#= link_to "Level 1", game_path(@games.first.id, level: 1), class:"difficulty-btn btn btn-primary btn-lg", id: 'game-show' %>
+<%#= link_to "Level 2", game_path(@games.first.id, level: 2), class:"difficulty-btn btn btn-primary btn-lg", id: 'game-show' %>
+<%#= link_to "Level 3", game_path(@games.first.id, level: 3), class:"difficulty-btn btn btn-primary btn-lg", id: 'game-show' %>
+<%#= link_to "Level 4", game_path(@games.first.id, level: 4), class:"difficulty-btn btn btn-primary btn-lg", id: 'game-show' %>
+
+<%#= link_to @games.first.name, game_path(@games.first.id, level: 1), class:"difficulty-btn btn btn-primary btn-lg", id: 'game-show2' %>
+<%#= link_to @games.first.name, game_path(@games.first.id, level: 2), class:"difficulty-btn btn btn-primary btn-lg", id: 'game-show2' %>
+<%#= link_to @games.first.name, game_path(@games.first.id, level: 3), class:"difficulty-btn btn btn-primary btn-lg", id: 'game-show2' %>
+<%#= link_to @games.first.name, game_path(@games.first.id, level: 4), class:"difficulty-btn btn btn-primary btn-lg", id: 'game-show2' %>
+
+<!-- <nav id="nav-bar"> -->
+  <%#= image_tag "ninja-github2.png", height: '200px', id: 'menu-button' %>
+<!-- </nav> -->
+
+<!-- <div class="link"> -->
+<!--   <a href="<%= user_avatar_path(current_user, current_user.avatar)  %>" class= "btn-shop-left" >Personnage</a> -->
+<!--   <a href="<%= items_path %>" class= "btn-shop-right" >shop</a> -->
+<!-- </div> -->
+
