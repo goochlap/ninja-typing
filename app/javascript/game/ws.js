@@ -6,7 +6,7 @@ const play = () => {
     const audio = new Audio('/musique/gamemusic.mp3');
     const audioSword = new Audio('/musique/sword-audio.mp3');
     const btnPlay = document.querySelector(".play-btn");
-    
+
     if(btnPlay) {
         btnPlay.addEventListener('click', () => {
             audio.play();
@@ -43,8 +43,9 @@ const play = () => {
                     words[i] = word;
 
                     setTimeout(function(){
-                        word.attack();
-                    }, 1000 * i);
+                        word.attack(word);
+                    }, 5000 * i);
+
                 }
 
                 document.addEventListener("keyup", heroAttack);
@@ -78,7 +79,7 @@ const play = () => {
                         // alert(`GAME OVER! SCORE ${score}`)
                         audio.pause();
                         audioSword.play();
-                        
+
                         // display rewars & actions when game over
                         document.querySelector(".rewards").style.display = 'block';
                         const btnPlayAgain = document.getElementById("button-popup");
@@ -90,7 +91,7 @@ const play = () => {
                         }
                     }, 10);
                 }
-                
+
                 function heroAttack(e) {
                     const letter = String.fromCharCode(e.keyCode).toLowerCase();
 
