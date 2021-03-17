@@ -4,8 +4,8 @@
 .word {
   color: green;
   position: absolute;
-  top: 50vh;
-  left: 50vw;
+  top: 17vh;
+  left: 5vw;
   font-size: 32px;
 }
 .word.target {
@@ -13,14 +13,18 @@
   font-size: 40px;
 }
 .hero {
-  width: 40px;
-  height: 40px;
+  width: 109px;
+  height: 109px;
   background-color: red;
   position: absolute;
-  top: 50vh;
-  left: 50vw;
+  top: 17vh;
+  left: 5vw;
   margin: -20px 0 0 -20px;
   border-radius: 100%;
+  background-image: image-url("ninja-laptop.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+
 }
 #score {
   position: absolute;

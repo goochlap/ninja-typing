@@ -4,7 +4,9 @@ import { createParticipation } from '../components/fetch_score_game';
 
 const play = () => {
     const audio = new Audio('/musique/gamemusic.mp3');
+    const audioSword = new Audio('/musique/sword-audio.mp3');
     const btnPlay = document.querySelector(".play-btn");
+    
     if(btnPlay) {
         btnPlay.addEventListener('click', () => {
             audio.play();
@@ -52,7 +54,7 @@ const play = () => {
                     return wordList[ initHelper().random(0, wordList.length) ];
                 }
 
-                // callled when a word dies
+                // called when a word dies
                 function onWordDies(word) {
                     activeWordIndex = null;
 
@@ -73,11 +75,22 @@ const play = () => {
                         const gameId  = document.getElementById("game-id").dataset.id;
                         const boardId = document.getElementById("board-id").dataset.id;
                         createParticipation(gameId, boardId, score);
-                        alert(`GAME OVER! SCORE ${score}`)
-                        window.location.reload();
+                        // alert(`GAME OVER! SCORE ${score}`)
+                        audio.pause();
+                        audioSword.play();
+                        
+                        // display rewars & actions when game over
+                        document.querySelector(".rewards").style.display = 'block';
+                        const btnPlayAgain = document.getElementById("button-popup");
+
+                        if (btnPlayAgain) {
+                            btnPlayAgain.addEventListener ('click', () => {
+                              window.location.reload();
+                            })
+                        }
                     }, 10);
                 }
-
+                
                 function heroAttack(e) {
                     const letter = String.fromCharCode(e.keyCode).toLowerCase();
 
