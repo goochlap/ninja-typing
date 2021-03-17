@@ -1,0 +1,245 @@
+/////////////////////////////background/////////////////////////////////////
+.board-background{
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+}
+
+.background1 {
+  background-image: image-url("/image/rightboard.png");
+  position: absolute;
+  width: 700px;
+  min-height: 100vh;
+  background-size: contain;
+  background-repeat: no-repeat;
+  left: 725px;
+  top: 51px;
+  animation: right 1.5s;
+  z-index: 5;
+}
+
+@keyframes right {
+    from {
+        opacity:0;
+        transform: translateX(500px);
+    }
+    to {
+        opacity:1;
+        transform: translateX(0px);
+    }
+  }
+
+.background2 {
+  background-image: image-url("/image/leftboard.png");
+  position: absolute;
+  width: 522px;
+  min-height: 100vh;
+  background-size: contain;
+  background-repeat: no-repeat;
+  top: 169px;
+  animation: left 1.5s;
+  z-index: 3;
+}
+
+@keyframes left {
+    from {
+        opacity:0;
+        transform: translateX(-500px);
+    }
+    to {
+        opacity:1;
+        transform: translateX(0px);
+    }
+  }
+.fireball{
+  background-image: image-url("/image/fireball.gif");
+  position: absolute;
+  width: 493px;
+  min-height: 100vh;
+  background-size: contain;
+  background-repeat: no-repeat;
+  top: 354px;
+  left: 74px;
+  z-index: 2;
+  opacity: 0.8;
+  animation: delayfire 3.5s;
+
+}
+
+ @keyframes delayfire {
+    0% {
+      background-image: none;
+      opacity: 0;
+        }
+    50% {
+      background-image: image-url("/image/fireball.gif");
+      opacity: 0;
+    }
+    100% {
+      background-image: image-url("/image/fireball.gif");
+      opacity: 0.8
+      }
+  }
+
+.ice{
+    transform: rotate(-33deg);
+    background-image: image-url("/image/ice.gif");
+    position: absolute;
+    width: 232px;
+    min-height: 100vh;
+    background-size: contain;
+    background-repeat: no-repeat;
+    left: 813px;
+    z-index: 2;
+    opacity: 0.8;
+    z-index: 4;
+    bottom: 391px;
+    -webkit-animation: delayice 3.5s;
+    animation: delayice 3.5s;
+
+
+}
+
+@keyframes delayice {
+    0% {
+      background-image: none;
+      opacity: 0;
+        }
+    50% {
+      background-image: image-url("/image/ice.gif");
+      opacity: 0;
+    }
+    100% {
+      background-image: image-url("/image/ice.gif");
+      opacity: 0.8
+      }
+  }
+
+
+///////////////////////////links////////////////////////////////////////////////
+
+
+
+.link-board-game{
+  display: flex;
+  position: relative;
+  z-index: 6;
+}
+
+.level1{
+  position: absolute;
+  left: 448px;
+  top: 109px;
+  animation: levelone 4.5s;
+
+}
+
+@keyframes levelone {
+    0% {
+      opacity: 0;
+        }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+      }
+  }
+
+.level2{
+  position: absolute;
+  left: 580px;
+  top: 255px;
+  animation: leveltwo 5.0s;
+
+}
+
+@keyframes leveltwo {
+    0% {
+      opacity: 0;
+        }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+      }
+  }
+
+.level3{
+  position: absolute;
+  left: 714px;
+  top: 393px;
+  animation: levelthree 5.5s;
+
+}
+
+@keyframes levelthree {
+    0% {
+      opacity: 0;
+        }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+      }
+  }
+
+.level4{
+  position: absolute;
+  left: 856px;
+  top: 526px;
+  animation: levelfour 6s;
+}
+
+@keyframes levelfour {
+    0% {
+      opacity: 0;
+        }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+      }
+  }
+
+
+
+
+
+
+
+
+@media(max-width: 992px) {
+.background1 {
+width: 500px;
+left: 425px;
+}
+.background2 {
+width: 322px;
+}
+.fireball{
+display: none;
+}
+.ice{
+display: none;
+}
+}
+
+@media(max-width: 768px) {
+.background1 {
+width: 300px;
+left: 225px;
+}
+.background2 {
+width: 222px;
+}
+.fireball{
+display: none
+}
+.ice{
+display: none;
+}
+}
