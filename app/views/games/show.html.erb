@@ -35,7 +35,8 @@
         <div id="score"></div>
         <div class="button-replay">
           <%= link_to "MENU", user_avatar_board_path(current_user, current_user.avatar, current_user.avatar.board), class:'btn play-btn btn-primary btn-lg button-popup hover-shadow' %>
-          <button class="play-btn btn btn-primary btn-lg hover-shadow" id="button-popup">REJOUER</button>
+          <div class="btn play-btn btn-primary btn-lg button-popup hover-shadow"><%= link_to "REJOUER", game_path(@game.id, level: params[:level]) %></div>
+          <%# <button class="play-btn btn btn-primary btn-lg hover-shadow" id="button-popup">REJOUER</button> %>
         </div>
     </div>
   </div>

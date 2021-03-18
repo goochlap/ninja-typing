@@ -1,6 +1,7 @@
 import Word from './word.js';
 import { initHelper } from './helper';
 import { createParticipation } from '../components/fetch_score_game';
+import { playAgain } from '../components/btn_play_again';
 
 const play = () => {
     const audio = new Audio('/musique/gamemusic.mp3');
@@ -11,11 +12,11 @@ const play = () => {
     if(btnPlay) {
         btnPlay.addEventListener('click', () => {
 
-            audio.play();
+            // audio.play();
             btnPlay.style.display = 'none';
             result.style.display = 'none';
             if (document.querySelector('#ws-wrapper') != null) {
-                const maxWordCount = 5; // maximum word count attacking
+                const maxWordCount = 3; // maximum word count attacking
                 let wordList
 
                 // word database
@@ -47,7 +48,7 @@ const play = () => {
                     
                     setTimeout(function(){
                         word.attack(word);
-                    }, 5000 * i);
+                    }, 2000 * i);
                     
                 }
 
@@ -85,20 +86,13 @@ const play = () => {
                         audio.pause();
                         audioSword.play();
 
-
-
                         // display rewars & actions when game over
                         document.querySelector(".all-rewards").style.display = 'block';
                         document.querySelector(".rewards").style.display = 'block';
                         document.querySelector(".score").style.display = 'block';
+                        
+                        // playAgain();
 
-                        const btnPlayAgain = document.getElementById("button-popup");
-
-                        if (btnPlayAgain) {
-                            btnPlayAgain.addEventListener ('click', () => {
-                              window.location.reload();
-                            })
-                        }
                     }, 10);
                 }
 
