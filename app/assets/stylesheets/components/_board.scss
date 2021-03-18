@@ -9,13 +9,12 @@
   width: 328px;
   text-align: center;
   left: 191px;
+  animation: boardname 3s;
   border-radius: 17px;
   position: relative;
-  animation: board-name 2s;
   background-image: image-url("/image/japanese-paper-texture.jpeg")
-
 }
-@keyframes board-name {
+@keyframes boardname {
     from {
         opacity:0;
 

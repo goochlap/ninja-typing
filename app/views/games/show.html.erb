@@ -1,38 +1,36 @@
-<div class="container-game">
-
+<div class="game-all">
   <div class="container-game-title">
     <h1><%= @game.name %></h1>
   </div>
+  <div class="container-game">
+    <div class="row">
+      <div class="col-3">
 
-  <div class="row">
-    <div class="col-3">
-
-      <div class="results-game">
-        <h2>✧ Meilleurs Scores ✧</h2>
-          <div class="best-results">
-            <% index = 0 %>
-            <% if @game.participations.count >= 1 %>
-              <% scores = @game.participations.sort_by { |participation| participation[:finished_in].to_i } %>
-              <% scores.reverse[0..2].each do |score| %>
-                <ul><%= index += 1 %># Score = <%= score.finished_in %></ul>
+        <div class="results-game">
+          <h2>✧ Meilleurs Scores ✧</h2>
+            <div class="best-results">
+              <% index = 0 %>
+              <% if @game.participations.count >= 1 %>
+                <% scores = @game.participations.sort_by { |participation| participation[:finished_in].to_i } %>
+                <% scores.reverse[0..2].each do |score| %>
+                  <ul><%= index += 1 %># Score = <%= score.finished_in %></ul>
+                <% end %>
               <% end %>
-            <% end %>
-          </div>
-        <button class="play-btn btn btn-primary btn-lg" data-level="<%= params[:level] %>">JOUER</button>
-      </div>
+            </div>
+          <button class="play-btn btn btn-primary btn-lg hover-shadow" data-level="<%= params[:level] %>">JOUER</button>
+        </div>
 
-      <div class="rewards">
-        <h2>✧ Score ✧</h2>
-          <div id="score"></div>
-          <div class="button-replay">
-            <%= link_to "MENU", user_avatar_board_path(current_user, current_user.avatar, current_user.avatar.board), class:'btn play-btn btn-primary btn-lg button-popup' %>
-            <button class="play-btn btn btn-primary btn-lg" id="button-popup">REJOUER</button>
-          </div>
-      </div>
+        <div class="rewards">
+          <h2>✧ Score ✧</h2>
+            <div id="score"></div>
+            <div class="button-replay">
+              <%= link_to "MENU", user_avatar_board_path(current_user, current_user.avatar, current_user.avatar.board), class:'btn play-btn btn-primary btn-lg button-popup hover-shadow' %>
+              <button class="play-btn btn btn-primary btn-lg hover-shadow" id="button-popup">REJOUER</button>
+            </div>
+        </div>
 
-      <%#= current_user.avatar.wallet %>
-    </div>
-    
+        <%#= current_user.avatar.wallet %>
+      </div>
     <div class="col">
       <div id="ws-wrapper">
         <div class="hero"></div>
@@ -43,4 +41,7 @@
     <span class="d-none" id="game-id" data-id="1"></span>
     <span class="d-none" id="board-id" data-id="<%= current_user.avatar.board.id %>"></span>
   </div>
+  </div>
 </div>
+
+

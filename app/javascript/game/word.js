@@ -34,7 +34,7 @@ export default class Word {
 
     resetStartPosition() {
         // a random angle of entrance to view
-        this.angle = initHelper().random(0, 90);
+        this.angle = initHelper().random(75, 95);
 
         // some trigonometry
         const x = Math.sin(this.angle * (Math.PI / 180)) * initHelper().radius;
@@ -43,7 +43,7 @@ export default class Word {
         // move element to x,y
         this.elTransform = `translate(${x}px, ${y}px)`;
         // rotate to target
-        this.elTransform += `rotate(${180 - this.angle}deg)`;
+        // this.elTransform += `rotate(${180 - this.angle}deg)`;
 
         this.el.style.transform = this.elTransform;
     }
@@ -54,7 +54,7 @@ export default class Word {
             transform: this.elTransform
         },{
             offset: 1,
-            transform: `rotate(${180 - this.angle}deg) translate(0,0)`
+            transform: `translate(0,0)`
         }];
 
         // set difficulty

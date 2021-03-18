@@ -8,8 +8,8 @@ const initHelper = () => {
     }
     helper.wrapper = document.getElementById("ws-wrapper");
     // diagonal distance of view for spawn area
-    helper.radius = Math.sqrt(helper.ww * helper.ww + helper.wh * helper.wh) / 4;
+    helper.radius = Math.sqrt(helper.ww * helper.ww + helper.wh * helper.wh) / 1.9;
     return helper
   }
-  
+
   export {initHelper}

@@ -2,26 +2,33 @@
 //   overflow: hidden;
 // }
 .word {
-  color: green;
+  color: white;
   position: absolute;
-  top: 17vh;
-  left: 5vw;
+  top: 42vh;
+  left: 7vw;
   font-size: 32px;
+  background-size: 176px 133px;
+  background-repeat: no-repeat;
+  background-position: -8px 23px;
+  width: 202px;
+  text-align: center;
+  height: 159px;
+  background-image: image-url("/image/zombie1.gif")
 }
 .word.target {
   color: red;
   font-size: 40px;
 }
 .hero {
-  width: 109px;
-  height: 109px;
-  background-color: red;
+
+  width: 137px;
+  height: 145px;
   position: absolute;
-  top: 17vh;
-  left: 5vw;
-  margin: -20px 0 0 -20px;
+  top: 36vh;
+  left: 1vw;
+  margin: 0px 0 0 0px;
   border-radius: 100%;
-  background-image: image-url("ninja-laptop.png");
+  background-image: image-url("/image/samurai1.gif");
   background-size: contain;
   background-repeat: no-repeat;
 
@@ -47,11 +54,11 @@
 nav #menu-button2 {
   margin: 20px 150vh;
   display: inline;
-  
+
   /* Width and height hack to represent missing image's height and width */
   width: 60px;
   height: 60px;
-  
+
   /* CSS Transition added */
   -webkit-transition: margin-left 2.5s;
   transition: margin-left 2.5s;

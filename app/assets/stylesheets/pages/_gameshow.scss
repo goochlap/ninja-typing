@@ -1,18 +1,36 @@
+.game-all{
+  min-height: 100vh;
+  width: 100%;
+}
+
 .container-game {
   min-height: 100vh;
   width: 100%;
-  .row {
-    min-height: 60vh;
+.row {
+  min-height: 90vh;
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: 20px;
+  margin-left: 0px;
   }
-  .container-game-title {
+}
+
+.col {
+  border: 1px solid black;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: image-url("/image/landscape-game.jpeg")
+}
+
+.container-game-title {
     text-align: center;
     margin-top: 24px;
   }
   h1 {
     font-family: $my-font2;
     font-size: 95px;
+    margin-left: 341px;
   }
-}
 
 .results-game {
   h2 {
@@ -73,7 +91,7 @@
 
 .rewards .button-replay {
   position: absolute;
-  bottom: 0;
+  top: 332px;
   left: 40px;
   a {
     margin-right: 14px;
