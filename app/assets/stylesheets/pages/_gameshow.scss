@@ -12,14 +12,19 @@
   flex-wrap: wrap;
   margin-right: 20px;
   margin-left: 0px;
+  width: 100%;
+  min-height: 70vh;
+  padding: 15px;
+
   }
 }
 
 .col {
+
   border: 1px solid black;
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: image-url("/image/landscape-game.jpeg")
+  background-image: image-url("/image/landscape-game.jpeg");
 }
 
 .container-game-title {
@@ -29,9 +34,15 @@
   .container-game-title h1 {
     font-family: $my-font2;
     font-size: 95px;
-    margin-left: 341px;
   }
-
+.results-game{
+    position: absolute;
+    width: 100%;
+    min-height: 66.5vh;
+    top: 227px;
+    background-color: rgba;
+    background-color: rgba(244, 244, 244, 0.6);
+}
 .results-game {
   h2 {
     text-align: center;
@@ -40,13 +51,26 @@
     font-size: 33px;
   }
   .best-results {
-    margin-bottom: 24px;
+
+    margin-left: 627px;
+    margin-top: 54px;
+    margin-bottom: 91px;
   }
   button {
     display: block;
     margin: auto;
   }
 }
+
+.all-rewards{
+  width: 100%;
+  min-height: 70vh;
+  position: absolute;
+  top: 213px;
+  background-color: rgba(244, 244, 244, 0.7);
+  display: none;
+}
+
 
 .rewards {
   display: none;
@@ -57,6 +81,8 @@
   background-image: image-url("japan-form.png");
   background-size: contain;
   background-repeat: no-repeat;
+  left: 539px;
+  top: 69px;
   // background-position: top 64px right 52px;
 
 

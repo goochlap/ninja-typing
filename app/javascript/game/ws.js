@@ -6,11 +6,14 @@ const play = () => {
     const audio = new Audio('/musique/gamemusic.mp3');
     const audioSword = new Audio('/musique/sword-audio.mp3');
     const btnPlay = document.querySelector(".play-btn");
+    const result = document.querySelector(".results-game");
 
     if(btnPlay) {
         btnPlay.addEventListener('click', () => {
+
             audio.play();
             btnPlay.style.display = 'none';
+            result.style.display = 'none';
             if (document.querySelector('#ws-wrapper') != null) {
                 const maxWordCount = 5; // maximum word count attacking
                 let wordList
@@ -29,7 +32,7 @@ const play = () => {
                 const words = [];
                 let score = 0;
                 let scoreElement = document.getElementById("score");
-                
+
                 // holds word index got hit until word dies
                 let activeWordIndex = null;
                 
@@ -82,8 +85,13 @@ const play = () => {
                         audio.pause();
                         audioSword.play();
 
+
+
                         // display rewars & actions when game over
+                        document.querySelector(".all-rewards").style.display = 'block';
                         document.querySelector(".rewards").style.display = 'block';
+                        document.querySelector(".score").style.display = 'block';
+
                         const btnPlayAgain = document.getElementById("button-popup");
 
                         if (btnPlayAgain) {

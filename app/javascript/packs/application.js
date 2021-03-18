@@ -46,5 +46,9 @@ document.addEventListener('turbolinks:load', () => {
 });
 
 
+
+
+
+
 // btn play game #1
 
