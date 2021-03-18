@@ -11,7 +11,7 @@ const play = () => {
     if(btnPlay) {
         btnPlay.addEventListener('click', () => {
 
-            audio.play();
+            // audio.play();
             btnPlay.style.display = 'none';
             result.style.display = 'none';
             if (document.querySelector('#ws-wrapper') != null) {
