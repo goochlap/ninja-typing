@@ -34,7 +34,7 @@ export default class Word {
 
     resetStartPosition() {
         // a random angle of entrance to view
-        this.angle = initHelper().random(75, 95);
+        this.angle = initHelper().random(85, 95);
 
         // some trigonometry
         const x = Math.sin(this.angle * (Math.PI / 180)) * initHelper().radius;
