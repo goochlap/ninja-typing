@@ -17,7 +17,7 @@ const play = () => {
 
                 // word database
                 if (btnPlay.dataset.level == "1") {
-                    wordList = ['ame', 'ben', 'coq', 'dan', 'elf', 'fac', 'gin', 'jeu', 'lui', 'mon', 'vis', 'yin'];
+                    wordList = ['age', 'bon', 'coq', 'dan', 'eux', 'fac', 'gin', 'jeu', 'lui', 'mon', 'vif', 'yin'];
                 } else if (btnPlay.dataset.level == "2") {
                     wordList = ['ames', 'bens', 'coqs', 'dans', 'elfs', 'facs', 'gins', 'jeus', 'luis', 'mons', 'viss', 'yins'];
                 } else if (btnPlay.dataset.level == "3") {
@@ -29,23 +29,23 @@ const play = () => {
                 const words = [];
                 let score = 0;
                 let scoreElement = document.getElementById("score");
-
+                
                 // holds word index got hit until word dies
                 let activeWordIndex = null;
-
+                
                 for (let i=0; i<maxWordCount; i++) {
                     const word = new Word(randomWord());
-
+                    
                     // bind events
                     word.onDie = onWordDies;
                     word.onHit = onWordHits;
 
                     words[i] = word;
-
+                    
                     setTimeout(function(){
                         word.attack(word);
                     }, 5000 * i);
-
+                    
                 }
 
                 document.addEventListener("keyup", heroAttack);
@@ -75,7 +75,9 @@ const play = () => {
                         const score   = document.getElementById("score").innerText;
                         const gameId  = document.getElementById("game-id").dataset.id;
                         const boardId = document.getElementById("board-id").dataset.id;
-                        createParticipation(gameId, boardId, score);
+                        const lvlId = document.getElementById("level-id").dataset.id;
+
+                        createParticipation(gameId, boardId, score, lvlId);
                         // alert(`GAME OVER! SCORE ${score}`)
                         audio.pause();
                         audioSword.play();
