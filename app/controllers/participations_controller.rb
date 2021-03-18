@@ -1,17 +1,13 @@
 class ParticipationsController < ApplicationController
   def create
-    participation = Participation.create!(participation_params)
+    @participation = Participation.new(participation_params)
 
-    if participation.finished_in.to_i < 10
-      current_user.avatar.update(wallet: quantity(5))
-    else
-      current_user.avatar.update(wallet: quantity(10))
-    end
+    current_user.avatar.update(wallet: quantity)
 
-    if participation.save
+    if @participation.save
       render json: { success: true }
     else
-      render json: { success: false, errors: participation.errors.messages }, status: :unprocessable_entity
+      render json: { success: false, errors: @participation.errors.messages }, status: :unprocessable_entity
     end
   end
 
@@ -21,7 +17,17 @@ class ParticipationsController < ApplicationController
     params.require(:participation).permit(:finished_in, :board_id, :game_id)
   end
 
-  def quantity(number)
-    current_user.avatar.wallet + number
+  def quantity
+    score = @participation.finished_in.to_i
+    word_lenght = if params[:level_id] == 1
+                    3
+                  elsif params[:level_id] == 2
+                    4
+                  elsif params[:level_id] == 3
+                    5
+                  else
+                    6
+                  end
+    current_user.avatar.wallet + (score / word_lenght).round 
   end
 end

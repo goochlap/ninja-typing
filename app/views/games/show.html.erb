@@ -10,9 +10,11 @@
           <div id="score"></div>
         </div>
       </div>
-      <span class="d-none" id="game-id" data-id="1"></span>
-      <span class="d-none" id="board-id" data-id="<%= current_user.avatar.board.id %>"></span>
+        <span class="d-none" id="level-id" data-id="<%= @level %>"></span>
+        <span class="d-none" id="game-id" data-id="<%= @game.id %>"></span>
+        <span class="d-none" id="board-id" data-id="<%= current_user.avatar.board.id %>"></span>
     </div>
+
   </div>
   <div class="results-game">
     <h2>✧ Meilleurs Scores ✧</h2>
