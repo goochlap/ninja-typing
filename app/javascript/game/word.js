@@ -104,5 +104,7 @@ export default class Word {
         this.attackAnimation.cancel();
 
         this.attack();
+        // setTimeout(function(){
+        // }, 1000);
     }
 }
