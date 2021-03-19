@@ -45,20 +45,40 @@
 }
 .results-game {
   h2 {
-    text-align: center;
-    margin-top: 48px;
     font-family: $my-font2;
     font-size: 33px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 25px;
+    bottom: 14px;
+    position: relative;
+    text-align: center;
   }
   .best-results {
 
-    margin-left: 627px;
-    margin-top: 54px;
-    margin-bottom: 91px;
+    left: 48%;
+    transform: translateX(-50%);
+    top: 25px;
+    bottom: 14px;
+    position: relative;
+    text-align: center;
   }
-  button {
+
+  .best-results ul {
+
+    left: 50%;
+    transform: translateX(-50%);
+    top: 25px;
+    bottom: 14px;
+    position: relative;
+    text-align: center;
+  }
+
+   button {
+    top: 150px;
     display: block;
-    margin: auto;
+    margin: auto
+
   }
 }
 
@@ -104,7 +124,7 @@
   margin-right: 10px;
 }
 
-.rewards #score {
+.rewards .game-score {
   position: absolute;
   top: 136px;
   right: 117px;
@@ -114,6 +134,8 @@
   width: 92px;
   text-align: center;
 }
+
+
 
 .rewards .button-replay {
   position: absolute;

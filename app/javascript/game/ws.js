@@ -32,24 +32,24 @@ const play = () => {
 
                 const words = [];
                 let score = 0;
-                let scoreElement = document.getElementById("score");
+                let scoreElements = document.querySelectorAll(".js-game-score");
 
                 // holds word index got hit until word dies
                 let activeWordIndex = null;
-                
+
                 for (let i=0; i<maxWordCount; i++) {
                     const word = new Word(randomWord());
-                    
+
                     // bind events
                     word.onDie = onWordDies;
                     word.onHit = onWordHits;
 
                     words[i] = word;
-                    
+
                     setTimeout(function(){
                         word.attack(word);
                     }, 2000 * i);
-                    
+
                 }
 
                 document.addEventListener("keyup", heroAttack);
@@ -76,7 +76,7 @@ const play = () => {
                     // animations needs time to stop
                     setTimeout(function() {
                         // get the score to send in participations controller
-                        const score   = document.getElementById("score").innerText;
+                        const score   = document.querySelector(".js-game-score").innerText;
                         const gameId  = document.getElementById("game-id").dataset.id;
                         const boardId = document.getElementById("board-id").dataset.id;
                         const lvlId = document.getElementById("level-id").dataset.id;
@@ -90,7 +90,7 @@ const play = () => {
                         document.querySelector(".all-rewards").style.display = 'block';
                         document.querySelector(".rewards").style.display = 'block';
                         document.querySelector(".score").style.display = 'block';
-                        
+
                         // playAgain();
 
                     }, 10);
@@ -121,8 +121,7 @@ const play = () => {
 
                 function incrementScore() {
                     score++;
-
-                    scoreElement.innerText = score;
+                    scoreElements.forEach(scoreElement => scoreElement.innerText = score)
                 }
 
             }

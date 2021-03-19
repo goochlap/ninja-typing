@@ -7,7 +7,7 @@
       <div class="col">
         <div id="ws-wrapper">
           <div class="hero"></div>
-          <%# <div id="score"></div> %>
+        <div class= "js-game-score game-score"></div>
         </div>
       </div>
         <span class="d-none" id="level-id" data-id="<%= @level %>"></span>
@@ -32,7 +32,7 @@
   <div class="all-rewards">
     <div class="rewards">
       <h2>✧ Score ✧</h2>
-        <div id="score"></div>
+        <div class= "js-game-score game-score"></div>
         <div class="button-replay">
           <%= link_to "MENU", user_avatar_board_path(current_user, current_user.avatar, current_user.avatar.board), class:'btn play-btn btn-primary btn-lg button-popup hover-shadow' %>
           <div class="btn play-btn btn-primary btn-lg button-popup hover-shadow"><%= link_to "REJOUER", game_path(@game.id, level: params[:level]) %></div>
