@@ -66,7 +66,8 @@
       </ul>
    </div>
 </div>
- <div class="play-button">
-    <a href="<%= user_session_path %>" class= "btn btn-play mt-5" >play</a>
-  </div>
+
+<div class="play-button">
+  <%= link_to "JOUER", user_avatar_board_path(current_user, current_user.avatar, current_user.avatar.board), class:'btn btn-play mt-5' %>
+</div>
 
