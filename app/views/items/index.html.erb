@@ -1,10 +1,15 @@
 <div class="bakcground-card">
+
   <div class="shop">
-    <div class="style-shop"><h1>shop</h1></div>
+    <div class="style-shop"><h1>Magasin</h1></div>
+    <div class="wallet-shop">
+      <span>Solde: <%= current_user.avatar.wallet %>💰</span>
+    </div>
   </div>
+
   <% @categories.each do |category| %>
     <div class="name-categories">
-      <h1><%= category.name %></h1><hr>
+      <h1><%= category.name.capitalize %>s</h1><hr>
     </div>
       <div class="container-cards">
         <% @items.where(category: category.id).each do |item| %>
@@ -19,9 +24,11 @@
                 </div>
                   <div class="soldout">
                     <% if AvatarItem.exists?(item_id: item.id, avatar_id: current_user.avatar.id) %>
-                    <%= render inline:"<p>deja acheté</p>"%>
+                      <%= render inline:"<p>deja acheté</p>"%>
+                    <% elsif item.price > current_user.avatar.wallet %>
+                      <span>Fond insuffisant</span>
                     <% else %>
-                    <%= link_to 'acheter', avatar_items_path(avatar_id: current_user.avatar, item_id: item.id), method: :post %>
+                      <%= link_to 'acheter', avatar_items_path(avatar_id: current_user.avatar, item_id: item.id), method: :post %>
                     <% end %>
                   </div>
             </div>
