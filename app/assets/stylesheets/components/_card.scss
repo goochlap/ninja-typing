@@ -38,7 +38,6 @@
   background-color: white;
 }
 
-
 .card-trip p {
   font-size: 27px;
   opacity: .7;
@@ -57,7 +56,7 @@
 .card-trip-infos .card-trip-user {
   position: absolute;
   right: 17px;
-  width: 73px;
+  width: 79px;
   text-align: center;
   bottom: 74px;
   color: gold;
@@ -106,7 +105,7 @@
   right: 102px;
   top: 62px;
   padding: 3px;
-  color: white;
+  color: beige;
   font-weight: bold;
   background-color: #E61000;
   font-size: 20px;
@@ -128,11 +127,11 @@
   text-align: center
 }
 
-
 .shop h1 {
   font-size: 76px;
   font-family: $my-font;
   margin-bottom: 200px;
+  text-shadow: 2px 2px white;
 }
 
 .bakcground-card{
@@ -160,8 +159,18 @@ hr {
   padding: 35px;
   border: 1px solid black;
   background-image: image-url("/image/backgroundtitleshop.png");
+}
 
+.wallet-shop{
+  position: fixed;
+  right: 232px;
+  bottom: 324px;
+  padding: 16px;
+  background-color: beige;
+  span {
+    font-size: 20px;
   }
+}
 
 ///////////////////////////// hover on links//////////////////////////////////:
 .link {

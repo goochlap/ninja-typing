@@ -1,10 +1,15 @@
 <div class="bakcground-card">
+
   <div class="shop">
     <div class="style-shop"><h1>Magasin</h1></div>
+    <div class="wallet-shop">
+      <span>Solde: <%= current_user.avatar.wallet %>💰</span>
+    </div>
   </div>
+
   <% @categories.each do |category| %>
     <div class="name-categories">
-      <h1><%= category.name.capitalize %></h1><hr>
+      <h1><%= category.name.capitalize %>s</h1><hr>
     </div>
       <div class="container-cards">
         <% @items.where(category: category.id).each do |item| %>
