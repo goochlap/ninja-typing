@@ -7,10 +7,15 @@
   box-shadow: 2px 1px 6px rgba(0,0,0,0.2);
 
   h2 {
-    font-size: 25px;
+    border-radius: 42px;
+    text-shadow: 1px 2px black;
+    color: #D3AF89;
     font-weight: bold;
     text-align: center;
     margin: 15px 0;
+    background-color: #eae8e8;
+    font-size: 29px;
+    margin: 30px 21px;
   }
 
 .btn {
@@ -69,4 +74,8 @@ input:focus::placeholder {
   .form-login {
     margin-top: 120px;
   }
+}
+
+a.connexion {
+  color: blue;
 }

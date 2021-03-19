@@ -32,7 +32,7 @@
    <div id="backpack">
      <h1>Sac a dos</h1><hr>
         <ul><% @avatar.items.each do |item| %>
-          <li class="card" ><%= item.name %><%= link_to 'utiliser',   validate_avatar_item_path(avatar_id: current_user.avatar, item_id: item.id), method: :post %>
+          <li class="card" ><%= item.name %><%= link_to 'Utiliser',   validate_avatar_item_path(avatar_id: current_user.avatar, item_id: item.id), method: :post %>
           <img src="<%= item.image %>">
           </li>
         <% end %>

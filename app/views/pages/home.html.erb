@@ -5,9 +5,9 @@
       <%= image_tag ('dinosaur.png'), height: '300px', id: 'img-home-page' %>
       <div>
         <% if current_user && !current_user.avatar.nil? %>
-          <%= link_to "PLAY", user_avatar_board_path(current_user, current_user.avatar, current_user.avatar.board), class:'btn btn-play mt-5' %>
+          <%= link_to "JOUER", user_avatar_board_path(current_user, current_user.avatar, current_user.avatar.board), class:'btn btn-play mt-5' %>
         <% else %>
-          <%= link_to "PLAY", user_session_path, class:'btn btn-play mt-5' %>
+          <%= link_to "JOUER", user_session_path, class:'btn btn-play mt-5' %>
         <% end %>
       </div>
     </div>
