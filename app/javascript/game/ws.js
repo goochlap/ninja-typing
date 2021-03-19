@@ -19,6 +19,7 @@ const play = () => {
                 const maxWordCount = 3; // maximum word count attacking
                 let wordList
 
+
                 // word database
                 if (btnPlay.dataset.level == "1") {
                     wordList = ['age', 'bon', 'coq', 'dan', 'eux', 'fac', 'gin', 'ive', 'kid', 'jeu', 'lui', 'mon', 'nem', 'oie', 'pie', 'qui', 'riz', 'sel', 'tic', 'une', 'vif', 'wok', 'yin', 'zoo'];
@@ -93,7 +94,7 @@ const play = () => {
 
                         // playAgain();
 
-                    });
+                    }, 50);
                 }
 
                 function heroAttack(e) {

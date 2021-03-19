@@ -24,11 +24,11 @@
                 </div>
                   <div class="soldout">
                     <% if AvatarItem.exists?(item_id: item.id, avatar_id: current_user.avatar.id) %>
-                      <%= render inline:"<p>deja acheté</p>"%>
+                      <%= render inline:"<p>Déjà acheté</p>"%>
                     <% elsif item.price > current_user.avatar.wallet %>
                       <span>Fond insuffisant</span>
                     <% else %>
-                      <%= link_to 'acheter', avatar_items_path(avatar_id: current_user.avatar, item_id: item.id), method: :post %>
+                      <%= link_to 'Acheter', avatar_items_path(avatar_id: current_user.avatar, item_id: item.id), method: :post %>
                     <% end %>
                   </div>
             </div>
