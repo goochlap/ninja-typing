@@ -14,7 +14,7 @@
         <li class="nav-item">
         </li>
         <li>
-          <% if (request.original_url != ('http://localhost:3000/' || 'https://ninja-typing.herokuapp.com/')) %>
+          <% if (request.original_url != ('https://ninja-typing.herokuapp.com/')) %>
             <%= link_to "Jouer", user_avatar_board_path(current_user, current_user.avatar, current_user.avatar.board), class: " nav-link wiggle" %>
           <% end %>
         </li>
