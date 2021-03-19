@@ -39,6 +39,6 @@
   <div class="link">
     <a href="<%= user_avatar_path(current_user, current_user.avatar, current_user.avatar.board)  %>" class= "btn-shop-left" >Ninja avatar</a>
     <a href="<%= root_path %>" class= "btn-shop-center" >ACCUEIL</a>
-    <a href="<%= user_session_path %>" class= "btn-shop-right" >Jeux</a>
+    <a href="<%= user_avatar_board_path(current_user, current_user.avatar, current_user.avatar.board) %>" class= "btn-shop-right" >Jeux</a>
   </div>
 </div>
