@@ -14,6 +14,9 @@
         <li class="nav-item">
         </li>
         <li>
+          <%= link_to "Jouer", user_avatar_board_path(current_user, current_user.avatar, current_user.avatar.board), class: " nav-link wiggle" %>
+        </li>
+        <li>
           <%= link_to "Magasin", items_path, class: "nav-link" %>
         </li>
         <% if current_user.avatar %>
