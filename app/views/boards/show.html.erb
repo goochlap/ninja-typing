@@ -4,8 +4,18 @@
     <div class="background2"></div>
     <div class="fireball"></div>
     <div class="ice"></div>
+    <div class="game-rules">
+      <h3>Règles du jeu</h3>
+      <p>- Eliminer les Zombies un par un en tapant le mot au-dessus de leur tête</p>
+      <p>- Plus le level est grand et plus la rapidité est accrue</p>
+      <p>- Level 1 => 3 lettres par mots</p>
+      <p>- Level 2 => 4 lettres par mots</p>
+      <p>- Level 3 => 5 lettres par mots</p>
+      <p>- Level 4 => 6 lettres par mots</p>
+      <p>Bonne chance !</p>
+    </div>
     <div class="board-name">
-      <h1><img src="/image/shuriken.gif" alt="logo" class: /><strong><%= current_user.name.capitalize %></strong><img src="/image/shuriken.gif" alt="logo" /></h1>
+      <h1><img src="/image/shuriken.gif" alt="logo" class: /><strong><%= Game.first.name.capitalize %></strong><img src="/image/shuriken.gif" alt="logo" /></h1>
     </div>
     <div class="link-board-game">
       <div class="level1"><%= link_to "Level 1", game_path(@games.first.id, level: 1), class:"hover-shadow", id: 'game-show' %></div>
