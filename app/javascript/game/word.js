@@ -13,12 +13,18 @@ export default class Word {
 
     // sets Word's properties
     init(word) {
+
         this.word = word;
         this.letters = word.split("");
 
+
         // if DOM element crated, change it's innerText
         if(this.el) {
-            this.el.innerText = this.word;
+          const zombies = ["word-image-zombie1", "word-image-zombie2", "word-image-zombie3", "word-image-zombie4", "word-image-zombie5" ];
+          const zombie = zombies[Math.floor(Math.random() * zombies.length)];
+          this.el.classList.remove(this.el.classList[1]);
+          this.el.classList.add(zombie);
+          this.el.innerText = this.word;
         }
     }
 
@@ -26,6 +32,9 @@ export default class Word {
         this.el = document.createElement("div");
         this.el.innerText = this.word;
         this.el.classList.add("word");
+        const zombies = ["word-image-zombie1", "word-image-zombie2", "word-image-zombie3", "word-image-zombie4", "word-image-zombie5" ];
+        const zombie = zombies[Math.floor(Math.random() * zombies.length)];
+        this.el.classList.add(zombie);
         initHelper().wrapper.append(this.el);
 
         // set margin to center element in the view
@@ -107,4 +116,5 @@ export default class Word {
         // setTimeout(function(){
         // }, 1000);
     }
+
 }

@@ -93,7 +93,7 @@ const play = () => {
 
                         // playAgain();
 
-                    }, 10);
+                    });
                 }
 
                 function heroAttack(e) {
