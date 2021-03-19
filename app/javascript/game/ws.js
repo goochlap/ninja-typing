@@ -21,13 +21,13 @@ const play = () => {
 
                 // word database
                 if (btnPlay.dataset.level == "1") {
-                    wordList = ['age', 'bon', 'coq', 'dan', 'eux', 'fac', 'gin', 'jeu', 'lui', 'mon', 'vif', 'yin'];
+                    wordList = ['age', 'bon', 'coq', 'dan', 'eux', 'fac', 'gin', 'ive', 'kid', 'jeu', 'lui', 'mon', 'nem', 'oie', 'pie', 'qui', 'riz', 'sel', 'tic', 'une', 'vif', 'wok', 'yin', 'zoo'];
                 } else if (btnPlay.dataset.level == "2") {
-                    wordList = ['ames', 'bens', 'coqs', 'dans', 'elfs', 'facs', 'gins', 'jeus', 'luis', 'mons', 'viss', 'yins'];
+                    wordList = ['ames', 'bien', 'cafe', 'dans', 'elfe', 'face', 'goal', 'hard', 'inox', 'jour', 'kaki', 'leur', 'muse', 'nuit', 'ouch', 'papi', 'quel', 'revu', 'sake', 'tuba', 'unie', 'vite', 'wifi', 'yeti', 'zeta'];
                 } else if (btnPlay.dataset.level == "3") {
-                    wordList = ['amess', 'benss', 'coqss', 'danss', 'elfss', 'facss', 'ginss', 'jeuss', 'luiss', 'monss', 'visss', 'yinss'];
+                    wordList = ['acces', 'bingo', 'chaud', 'durci', 'extra', 'faute', 'gilet', 'hakka', 'isard', 'joyau', 'kraft', 'lever', 'mixer', 'noire', 'octet', 'pièce', 'quota', 'rimer', 'songe', 'tante', 'ultra', 'veste', 'wagon', 'yucca', 'zaire'];
                 } else {
-                    wordList = ['ameddd', 'benddd', 'coqddd', 'danddd', 'elfddd', 'facddd', 'ginddd', 'jeuddd', 'luiddd', 'monddd', 'visddd', 'yinddd'];
+                    wordList = ['angora', 'balais', 'canari', 'defend', 'empare', 'fiance', 'gommer', 'habile', 'immune', 'jouons', 'klaxon', 'lingot', 'maboul', 'nicher', 'office', 'pentue', 'quotta', 'recoin', 'sonnet', 'titube', 'unique', 'voleur', 'woofer', 'xiphos', 'yaourt', 'zombie'];
                 }
 
                 const words = [];
