@@ -20,3 +20,62 @@
   padding-right: 16px;
   font-weight: bold;
 }
+
+.navbar-light .navbar-nav .wiggle {
+  color: red ;
+  font-size: 17px;
+  animation: wiggle 3s 1s infinite;
+
+  &:hover {
+
+    color: red;
+    cursor: pointer;
+    animation: none;
+    animation-name: hover;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    text-decoration: none;
+    }
+}
+
+ @keyframes hover {
+  50% {
+    transform: translateY(-3px);
+  }
+  100% {
+    transform: translateY(-9px);
+  }
+}
+
+
+@keyframes wiggle {
+  5%,
+  50% {
+    transform: scale(1);
+  }
+  10% {
+    transform: scale(0.8);
+  }
+  15% {
+    transform: scale(1.9);
+  }
+  20% {
+    transform: scale(1.9) rotate(-5deg);
+  }
+  25% {
+    transform: scale(1.9) rotate(5deg);
+  }
+  30% {
+    transform: scale(1.9) rotate(-3deg);
+  }
+  35% {
+    transform: scale(1.9) rotate(2deg);
+  }
+  40% {
+    transform: scale(1.9) rotate(0);
+  }
+}
+
+
