@@ -5,9 +5,9 @@ class AvatarsController < ApplicationController
     unless @avatar.avatar_items.find_by(choosen: true).nil?
 
       @avatar_item_image = @avatar.avatar_items.find_by(choosen: true).item.image
-      @avatar_weapon_image = Item.find((@avatar.avatar_items.where(choosen: true).pluck(:item_id) & Category.find_by(name: 'weapon').items.pluck(:id)).first).image unless Item.find((@avatar.avatar_items.where(choosen: true).pluck(:item_id) & Category.find_by(name: 'weapon').items.pluck(:id))).empty?
-      @avatar_ribbon_image = Item.find((@avatar.avatar_items.where(choosen: true).pluck(:item_id) & Category.find_by(name: 'ribbon').items.pluck(:id)).first).image unless Item.find((@avatar.avatar_items.where(choosen: true).pluck(:item_id) & Category.find_by(name: 'ribbon').items.pluck(:id))).empty?
-      @avatar_badge_image = Item.find((@avatar.avatar_items.where(choosen: true).pluck(:item_id) & Category.find_by(name: 'badge').items.pluck(:id)).first).image unless Item.find((@avatar.avatar_items.where(choosen: true).pluck(:item_id) & Category.find_by(name: 'badge').items.pluck(:id))).empty?
+      @avatar_weapon_image = Item.find((@avatar.avatar_items.where(choosen: true).pluck(:item_id) & Category.find_by(name: 'Arme').items.pluck(:id)).first).image unless Item.find((@avatar.avatar_items.where(choosen: true).pluck(:item_id) & Category.find_by(name: 'Arme').items.pluck(:id))).empty?
+      @avatar_ribbon_image = Item.find((@avatar.avatar_items.where(choosen: true).pluck(:item_id) & Category.find_by(name: 'Ruban').items.pluck(:id)).first).image unless Item.find((@avatar.avatar_items.where(choosen: true).pluck(:item_id) & Category.find_by(name: 'Ruban').items.pluck(:id))).empty?
+      @avatar_badge_image = Item.find((@avatar.avatar_items.where(choosen: true).pluck(:item_id) & Category.find_by(name: 'Insigne').items.pluck(:id)).first).image unless Item.find((@avatar.avatar_items.where(choosen: true).pluck(:item_id) & Category.find_by(name: 'Insigne').items.pluck(:id))).empty?
 
     end
   end

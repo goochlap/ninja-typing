@@ -90,7 +90,6 @@
   z-index: 2;
   opacity: 0.8;
   animation: delayfire 3.5s;
-
 }
 
  @keyframes delayfire {
@@ -123,8 +122,6 @@
     bottom: 391px;
     -webkit-animation: delayice 3.5s;
     animation: delayice 3.5s;
-
-
 }
 
 @keyframes delayice {
@@ -144,7 +141,6 @@
 
 
 ///////////////////////////links////////////////////////////////////////////////
-
 
 
 .link-board-game{
@@ -240,13 +236,6 @@
       }
   }
 
-
-
-
-
-
-
-
 @media(max-width: 992px) {
 .background1 {
 width: 500px;
@@ -277,4 +266,27 @@ display: none
 .ice{
 display: none;
 }
+}
+
+// Game rules // 
+
+.game-rules {
+  position: absolute;
+  right: 24px;
+  bottom: 24px;
+  font-size: 14px;
+  line-height: 100%;
+  animation: gamerules 5s;
+}
+
+@keyframes gamerules {
+  0% {
+    opacity: 0;
+      }
+  70% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    }
 }
