@@ -36,20 +36,20 @@ const play = () => {
 
                 // holds word index got hit until word dies
                 let activeWordIndex = null;
-                
+
                 for (let i=0; i<maxWordCount; i++) {
                     const word = new Word(randomWord());
-                    
+
                     // bind events
                     word.onDie = onWordDies;
                     word.onHit = onWordHits;
 
                     words[i] = word;
-                    
+
                     setTimeout(function(){
                         word.attack(word);
                     }, 2000 * i);
-                    
+
                 }
 
                 document.addEventListener("keyup", heroAttack);
@@ -90,10 +90,10 @@ const play = () => {
                         document.querySelector(".all-rewards").style.display = 'block';
                         document.querySelector(".rewards").style.display = 'block';
                         document.querySelector(".score").style.display = 'block';
-                        
+
                         // playAgain();
 
-                    }, 10);
+                    });
                 }
 
                 function heroAttack(e) {

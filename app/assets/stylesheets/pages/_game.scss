@@ -13,8 +13,28 @@
   width: 202px;
   text-align: center;
   height: 159px;
+}
+
+.word-image-zombie1 {
   background-image: image-url("/image/zombie1.gif")
 }
+
+.word-image-zombie2 {
+  background-image: image-url("/image/zombie2.gif")
+}
+
+.word-image-zombie3 {
+  background-image: image-url("/image/zombie3.gif")
+}
+
+.word-image-zombie4 {
+  background-image: image-url("/image/zombie4.gif")
+}
+
+.word-image-zombie5 {
+  background-image: image-url("/image/zombie5.gif")
+}
+
 .word.target {
   color: red;
   font-size: 40px;
