@@ -64,7 +64,6 @@
   text-shadow: 0px 2px 4px black;
 }
 
-
 .button{
   position: absolute;
   top: 95px;
@@ -99,6 +98,18 @@
 .soldout a:hover {
   background-color: #9d4948;
   color: white;
+}
+
+.soldout span {
+  position: absolute;
+  box-shadow: 0px 2px 8px black;
+  right: 102px;
+  top: 62px;
+  padding: 3px;
+  color: white;
+  font-weight: bold;
+  background-color: #E61000;
+  font-size: 20px;
 }
 
 .weapon-name h2 {
