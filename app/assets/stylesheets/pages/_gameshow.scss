@@ -94,16 +94,18 @@
 
 .rewards {
   display: none;
-  height: 100%;
-  width: 317px;
-  position: absolute;
   animation: fadein 2s;
   background-image: image-url("japan-form.png");
   background-size: contain;
   background-repeat: no-repeat;
-  left: 539px;
-  top: 69px;
-  // background-position: top 64px right 52px;
+  position: relative;
+  width: 100%;
+  height: 451px;
+  display: flex;
+  flex-direction: column;
+  background-position: center top 77px;
+  background-size: 254px;
+}
 
 
 @keyframes fadein {
@@ -116,34 +118,32 @@
       transform: translateX(0px);
     }
   }
-}
+
 .rewards h2 {
   font-size: 32px;
   text-align: center;
-  margin-top: 102px;
-  margin-right: 10px;
+  margin-top: 34px;
 }
 
 .rewards .game-score {
-  position: absolute;
-  top: 136px;
-  right: 117px;
+
+  width: 100%;
+  margin-top: 187px;
   color: tomato;
   font-size: 51px;
   font-weight: bold;
-  width: 92px;
   text-align: center;
 }
 
 
 
 .rewards .button-replay {
-  position: absolute;
-  top: 332px;
-  left: 40px;
-  a {
-    margin-right: 14px;
-  }
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    width: 132px;
+    margin: 0 auto;
+    margin-top: 299px;
 }
 
 .play-btn {
