@@ -88,7 +88,7 @@ const play = () => {
                         audio.pause();
                         audioSword.play();
                         
-                        numberWord.innerText = `${score / (parseInt(lvlId) + 2)}💰`;
+                        numberWord.innerText = `${Math.round(score / (parseInt(lvlId) + 2))}💰`;
 
                         // display rewars & actions when game over
                         document.querySelector(".all-rewards").style.display = 'block';
