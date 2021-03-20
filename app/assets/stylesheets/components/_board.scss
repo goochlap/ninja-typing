@@ -8,7 +8,8 @@
 .board-name{
   width: 328px;
   text-align: center;
-  left: 191px;
+  left: 275px;
+  top: 104px;
   animation: boardname 3s;
   border-radius: 17px;
   position: relative;
@@ -35,11 +36,11 @@
 .background1 {
   background-image: image-url("/image/rightboard.png");
   position: absolute;
-  width: 700px;
+  width: 816px;
   min-height: 100vh;
   background-size: contain;
   background-repeat: no-repeat;
-  left: 725px;
+  left: 57%;
   top: 51px;
   animation: right 1.5s;
   z-index: 5;
@@ -63,7 +64,7 @@
   min-height: 100vh;
   background-size: contain;
   background-repeat: no-repeat;
-  top: 169px;
+  top: 345px;
   animation: left 1.5s;
   z-index: 3;
 }
@@ -81,12 +82,11 @@
 .fireball{
   background-image: image-url("/image/fireball.gif");
   position: absolute;
-  width: 493px;
+  width: 539px;
   min-height: 100vh;
   background-size: contain;
   background-repeat: no-repeat;
-  top: 354px;
-  left: 74px;
+  top: 523px;
   z-index: 2;
   opacity: 0.8;
   animation: delayfire 3.5s;
@@ -115,7 +115,7 @@
     min-height: 100vh;
     background-size: contain;
     background-repeat: no-repeat;
-    left: 813px;
+    right: 426px;
     z-index: 2;
     opacity: 0.8;
     z-index: 4;
@@ -144,9 +144,19 @@
 
 
 .link-board-game{
+  width: 100%;
+  min-height: 100vh;
   display: flex;
   position: relative;
   z-index: 6;
+}
+
+.level-link-board{
+
+  position: absolute;
+  width: 100%;
+  top: 107px;
+  left: 196px;
 }
 
 .level1{
@@ -284,6 +294,8 @@ display: none;
 
 .game-rules {
   position: relative;
+  left: 282px;
+  top: 85px;
   animation: gamerules 5s;
 }
 

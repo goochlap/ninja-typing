@@ -21,10 +21,12 @@
       <h1><img src="/image/shuriken.gif" alt="logo" class: /><strong><%= Game.first.name.capitalize %></strong><img src="/image/shuriken.gif" alt="logo" /></h1>
     </div>
     <div class="link-board-game">
-      <div class="level1"><%= link_to "Niveau 1", game_path(@games.first.id, level: 1), class:"hover-shadow", id: 'game-show' %></div>
-      <div class="level2"><%= link_to "Niveau 2", game_path(@games.first.id, level: 2), class:"hover-shadow", id: 'game-show' %></div>
-      <div class="level3"><%= link_to "Niveau 3", game_path(@games.first.id, level: 3), class:"hover-shadow", id: 'game-show' %></div>
-      <div class="level4"><%= link_to "Niveau 4", game_path(@games.first.id, level: 4), class:"hover-shadow", id: 'game-show' %></div>
+      <div class="level-link-board">
+        <div class="level1"><%= link_to "Niveau 1", game_path(@games.first.id, level: 1), class:"hover-shadow", id: 'game-show' %></div>
+        <div class="level2"><%= link_to "Niveau 2", game_path(@games.first.id, level: 2), class:"hover-shadow", id: 'game-show' %></div>
+        <div class="level3"><%= link_to "Niveau 3", game_path(@games.first.id, level: 3), class:"hover-shadow", id: 'game-show' %></div>
+        <div class="level4"><%= link_to "Niveau 4", game_path(@games.first.id, level: 4), class:"hover-shadow", id: 'game-show' %></div>
+      </div>
     </div>
   </div>
 </div>
