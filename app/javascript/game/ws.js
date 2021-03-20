@@ -90,9 +90,9 @@ const play = () => {
                         // display rewars & actions when game over
                         document.querySelector(".all-rewards").style.display = 'block';
                         document.querySelector(".rewards").style.display = 'block';
-                        document.querySelector(".score").style.display = 'block';
+                        // document.querySelector(".score").style.display = 'block';
 
-                        // playAgain();
+                        playAgain();
 
                     }, 50);
                 }
