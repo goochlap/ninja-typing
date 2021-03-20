@@ -35,7 +35,7 @@
         <div class= "js-game-score game-score"></div>
         <div class="button-replay">
           <%= link_to "Level", user_avatar_board_path(current_user, current_user.avatar, current_user.avatar.board), class:'btn play-btn btn-primary btn-lg button-popup hover-shadow game-button' %>
-          <div class="btn play-btn btn-primary btn-lg button-popup hover-shadow game-button special"><%= link_to "Rejouer", game_path(@game.id, level: params[:level]) %></div>
+          <%= link_to "rejouer", game_path(@game.id, level: params[:level]) , class:'btn play-btn btn-primary btn-lg button-popup hover-shadow game-button special' %>
           <%= link_to "Personnage", user_avatar_path(current_user, current_user.avatar), class:'btn play-btn btn-primary btn-lg button-popup hover-shadow game-button' %>
           <%= link_to "Magasin", items_path, class:'btn play-btn btn-primary btn-lg button-popup hover-shadow game-button' %>
 

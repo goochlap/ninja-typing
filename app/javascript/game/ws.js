@@ -87,14 +87,23 @@ const play = () => {
                         audio.pause();
                         audioSword.play();
 
+
                         // display rewars & actions when game over
                         document.querySelector(".all-rewards").style.display = 'block';
                         document.querySelector(".rewards").style.display = 'block';
-                        document.querySelector(".score").style.display = 'block';
+                        // document.querySelector(".score").style.display = 'block';
 
-                        // playAgain();
 
-                    }, 50);
+                      //  const btnPlayAgain = document.querySelector(".button-popup");
+                      //  window.addEventListener("load", event => {
+                      //   btnPlayAgain.onclick = function() {
+                      //    location.reload();
+                      //   }
+                      // });
+                      //    console.log("coucou");
+
+
+                    });
                 }
 
                 function heroAttack(e) {
