@@ -35,9 +35,6 @@ import { menu } from '../menu/menu';
 
 
 
-
-
-
 document.addEventListener('turbolinks:load', () => {
     setTimeOut();
     // avatarMoving();
