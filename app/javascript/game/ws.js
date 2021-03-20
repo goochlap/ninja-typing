@@ -26,7 +26,7 @@ const play = () => {
                 } else if (btnPlay.dataset.level == "2") {
                     wordList = ['ames', 'bien', 'cafe', 'dans', 'elfe', 'face', 'goal', 'hard', 'inox', 'jour', 'kaki', 'leur', 'muse', 'nuit', 'ouch', 'papi', 'quel', 'revu', 'sake', 'tuba', 'unie', 'vite', 'wifi', 'yeti', 'zeta'];
                 } else if (btnPlay.dataset.level == "3") {
-                    wordList = ['acces', 'bingo', 'chaud', 'durci', 'extra', 'faute', 'gilet', 'hakka', 'isard', 'joyau', 'kraft', 'lever', 'mixer', 'noire', 'octet', 'pièce', 'quota', 'rimer', 'songe', 'tante', 'ultra', 'veste', 'wagon', 'yucca', 'zaire'];
+                    wordList = ['acces', 'bingo', 'chaud', 'durci', 'extra', 'faute', 'gilet', 'hakka', 'isard', 'joyau', 'kraft', 'lever', 'mixer', 'noire', 'octet', 'piece', 'quota', 'rimer', 'songe', 'tante', 'ultra', 'veste', 'wagon', 'yucca', 'zaire'];
                 } else {
                     wordList = ['angora', 'balais', 'canari', 'defend', 'empare', 'fiance', 'gommer', 'habile', 'immune', 'jouons', 'klaxon', 'lingot', 'maboul', 'nicher', 'office', 'pentue', 'quotta', 'recoin', 'sonnet', 'titube', 'unique', 'voleur', 'woofer', 'xiphos', 'yaourt', 'zombie'];
                 }
@@ -88,7 +88,7 @@ const play = () => {
                         audio.pause();
                         audioSword.play();
                         
-                        numberWord.innerText = score / (parseInt(lvlId) + 2);
+                        numberWord.innerText = `${score / (parseInt(lvlId) + 2)}💰`;
 
                         // display rewars & actions when game over
                         document.querySelector(".all-rewards").style.display = 'block';
