@@ -94,14 +94,8 @@ const play = () => {
                         // document.querySelector(".score").style.display = 'block';
 
 
-                      //  const btnPlayAgain = document.querySelector(".button-popup");
-                      //  window.addEventListener("load", event => {
-                      //   btnPlayAgain.onclick = function() {
-                      //    location.reload();
-                      //   }
-                      // });
-                      //    console.log("coucou");
 
+                        playAgain();
 
                     });
                 }
