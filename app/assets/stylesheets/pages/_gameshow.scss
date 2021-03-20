@@ -128,7 +128,7 @@
 .rewards .game-score {
 
   width: 100%;
-  margin-top: 163px;
+  margin-top: 137px;
   color: tomato;
   font-size: 51px;
   font-weight: bold;
@@ -143,9 +143,18 @@
     flex-direction: column;
     width: 132px;
     margin: 0 auto;
-    margin-top: 299px;
+    margin-top: 109px;
 }
 
 .play-btn {
   background-color: #E84648;
+}
+
+.number-word {
+  width: 100%;
+  margin-top: 163px;
+  color: tomato;
+  font-size: 51px;
+  font-weight: bold;
+  text-align: center;
 }

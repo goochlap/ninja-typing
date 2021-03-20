@@ -81,12 +81,14 @@ const play = () => {
                         const gameId  = document.getElementById("game-id").dataset.id;
                         const boardId = document.getElementById("board-id").dataset.id;
                         const lvlId = document.getElementById("level-id").dataset.id;
+                        const numberWord = document.querySelector(".number-word");
 
                         createParticipation(gameId, boardId, score, lvlId);
                         // alert(`GAME OVER! SCORE ${score}`)
                         audio.pause();
                         audioSword.play();
-
+                        
+                        numberWord.innerText = score / (parseInt(lvlId) + 2);
 
                         // display rewars & actions when game over
                         document.querySelector(".all-rewards").style.display = 'block';

@@ -28,6 +28,6 @@ class ParticipationsController < ApplicationController
                   else
                     6
                   end
-    current_user.avatar.wallet + (score / word_lenght).round 
+    current_user.avatar.wallet + (score / word_lenght.to_f).to_i
   end
 end
