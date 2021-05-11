@@ -10,6 +10,6 @@ class Avatar < ApplicationRecord
   validates :gender, presence: true
 
   def default_values
-    self.wallet = 70
+    self.wallet = 0
   end
 end
