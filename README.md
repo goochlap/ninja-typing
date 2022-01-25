@@ -1,4 +1,4 @@
-# TYPING GAME
+# [NINJA TYPING](https://ninja-typing.herokuapp.com/)
 
 > App designe to help occupational therapists to provide a support to help children with dyslexia and dysorthography.
 
