@@ -19,11 +19,12 @@ class ParticipationsController < ApplicationController
 
   def quantity
     score = @participation.finished_in.to_i
-    word_lenght = if params[:level_id] == 1
+    word_lenght = case params[:level_id]
+                  when 1
                     3
-                  elsif params[:level_id] == 2
+                  when 2
                     4
-                  elsif params[:level_id] == 3
+                  when 3
                     5
                   else
                     6

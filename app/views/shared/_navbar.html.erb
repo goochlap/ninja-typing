@@ -1,9 +1,10 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <%= link_to root_path, class: "navbar-brand" do %>
-    <%= image_tag "ninja-github.jfif" %>
-    <% end %>
+  <%= image_tag "ninja-github.jfif" %>
+  <% end %>
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
@@ -11,36 +12,34 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
-        <li class="nav-item">
-        </li>
-        <% if current_user.avatar %>
-        <li>
-          <% if (request.original_url != ('https://ninja-typing.herokuapp.com/')) %>
-            <%= link_to "Jouer", user_avatar_board_path(current_user, current_user.avatar, current_user.avatar.board), class: " nav-link wiggle" %>
-          <% end %>
-        </li>
-        <li>
-          <%= link_to "Magasin", items_path, class: "nav-link" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "Personnage", user_avatar_path(current_user, current_user.avatar), class: "nav-link" %>
-        </li>
+      <li class="nav-item">
+      </li>
+      <% if current_user.avatar %>
+      <li>
+        <% if (request.original_url != ('https://ninja-typing.herokuapp.com/')) %>
+        <%= link_to "Jouer", user_avatar_board_path(current_user, current_user.avatar, current_user.avatar.board), class: " nav-link wiggle" %>
         <% end %>
-        <li class="nav-item dropdown">
-          <%= image_tag "https://cdn1.iconfinder.com/data/icons/ninja-things-1/720/ninja-background-512.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%#= link_to "Action", "#", class: "dropdown-item" %>
-            <%#= link_to "Another action", "#", class: "dropdown-item" %>
-            <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-          </div>
-        </li>
+      </li>
+      <li>
+        <%= link_to "Magasin", items_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Personnage", user_avatar_path(current_user, current_user.avatar), class: "nav-link" %>
+      </li>
+      <% end %>
+      <li class="nav-item dropdown">
+        <%= image_tag "https://cdn1.iconfinder.com/data/icons/ninja-things-1/720/ninja-background-512.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+          <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+        </div>
+      </li>
       <% else %>
-        <li class="nav-item">
-          <%= link_to "Se connecter", new_user_session_path, class: "nav-link" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "S'inscrire", new_user_registration_path, class: "nav-link" %>
-        </li>
+      <li class="nav-item">
+        <%= link_to "Se connecter", new_user_session_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "S'inscrire", new_user_registration_path, class: "nav-link" %>
+      </li>
       <% end %>
     </ul>
   </div>

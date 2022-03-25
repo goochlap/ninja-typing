@@ -9,7 +9,7 @@ class AvatarItemsController < ApplicationController
       end
       avatar_item_choosen = AvatarItem.find_by(avatar_id: params[:avatar_id], item_id: item.id) unless item.nil?
       avatar_item.update(choosen: true)
-      avatar_item_choosen.update(choosen: false) unless avatar_item_choosen.nil?
+      avatar_item_choosen&.update(choosen: false)
       avatar.update(wallet: avatar.wallet - item_price)
       redirect_to user_avatar_path(current_user, current_user.avatar)
     else
@@ -25,7 +25,7 @@ class AvatarItemsController < ApplicationController
     end
     avatar_item_choosen = AvatarItem.find_by(avatar_id: params[:avatar_id], item_id: item.id) unless item.nil?
     avatar_item.update(choosen: true)
-    avatar_item_choosen.update(choosen: false) unless avatar_item_choosen.nil?
+    avatar_item_choosen&.update(choosen: false)
     redirect_to user_avatar_path(params[:avatar_id])
   end
 end

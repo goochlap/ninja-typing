@@ -1,46 +1,46 @@
-
 <div class="name-avatar-show">
   <%= current_user.avatar.name.capitalize %>
 </div>
 
- <div class="ninjacontainer">
+<div class="ninjacontainer">
   <div class="menu-ninja">
     <nav class="menu">
-     <input type="checkbox" href="#" class="menu-open" name="menu-open" id="menu-open" />
-     <label class="menu-open-button" for="menu-open">
-      <span class="lines line-1"></span>
-      <span class="lines line-2"></span>
-      <span class="lines line-3"></span>
-    </label>
+      <input type="checkbox" href="#" class="menu-open" name="menu-open" id="menu-open" />
+      <label class="menu-open-button" for="menu-open">
+        <span class="lines line-1"></span>
+        <span class="lines line-2"></span>
+        <span class="lines line-3"></span>
+      </label>
 
-     <a href="<%= items_path %>" class="menu-item white">Shop</a>
-     <a href="#" class="menu-item pink"><%= @avatar.wallet %>💰</a>
-     <button href="#" id="pocket" class="menu-item blue">Sac</button>
-     <a href="<%= edit_user_avatar_path(current_user, @avatar)  %>" class="menu-item red">Edit</a>
+      <a href="<%= items_path %>" class="menu-item white">Shop</a>
+      <a href="#" class="menu-item pink"><%= @avatar.wallet %>💰</a>
+      <button href="#" id="pocket" class="menu-item blue">Sac</button>
+      <a href="<%= edit_user_avatar_path(current_user, @avatar)  %>" class="menu-item red">Edit</a>
     </nav>
   </div>
 
-   <div class="ninja"></div>
-   <% if @avatar_item_image  %>
-     <div class="righthand" style="background-image: url(<%= @avatar_weapon_image %>);"></div>
-     <div class="leftthand" style="background-image: url(<%= @avatar_weapon_image %>);"></div>
-     <div class="ribbon" style="background-image: url(<%= @avatar_ribbon_image %>);"></div>
-     <div class="badge_ninja" style="background-image: url(<%= @avatar_badge_image %>);"></div>
+  <div class="ninja"></div>
+  <% if @avatar_item_image  %>
+  <div class="righthand" style="background-image: url(<%= @avatar_weapon_image %>);"></div>
+  <div class="leftthand" style="background-image: url(<%= @avatar_weapon_image %>);"></div>
+  <div class="ribbon" style="background-image: url(<%= @avatar_ribbon_image %>);"></div>
+  <div class="badge_ninja" style="background-image: url(<%= @avatar_badge_image %>);"></div>
 
-   <% end %>
+  <% end %>
 
-   <div id="backpack">
-     <h1>Sac a dos</h1><hr>
-        <ul><% @avatar.items.each do |item| %>
-          <li class="card" ><%= item.name %><%= link_to 'Utiliser',   validate_avatar_item_path(avatar_id: current_user.avatar, item_id: item.id), method: :post %>
-          <img src="<%= item.image %>">
-          </li>
-        <% end %>
-      </ul>
-   </div>
+  <div id="backpack">
+    <h1>Sac a dos</h1>
+    <hr>
+    <ul><% @avatar.items.each do |item| %>
+      <li class="card">
+        <%= item.name %><%= link_to 'Utiliser',   validate_avatar_item_path(avatar_id: current_user.avatar, item_id: item.id), method: :post %>
+        <img src="<%= item.image %>">
+      </li>
+      <% end %>
+    </ul>
+  </div>
 </div>
 
 <div class="play-button">
   <%= link_to "JOUER", user_avatar_board_path(current_user, current_user.avatar, current_user.avatar.board), class:'btn btn-play mt-5' %>
 </div>
-

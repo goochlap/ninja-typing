@@ -1,44 +1,49 @@
 <div class="bakcground-card">
 
   <div class="shop">
-    <div class="style-shop"><h1>Magasin</h1></div>
+    <div class="style-shop">
+      <h1>Magasin</h1>
+    </div>
     <div class="wallet-shop">
       <span>Solde: <%= current_user.avatar.wallet %>💰</span>
     </div>
   </div>
 
   <% @categories.each do |category| %>
-    <div class="name-categories">
-      <h1><%= category.name.capitalize %>s</h1><hr>
-    </div>
-      <div class="container-cards">
-        <% @items.where(category: category.id).each do |item| %>
-          <div class="card-trip">
-            <img src="<%= item.image %>">
-            <div class="card-trip-infos">
-              <div class="weapon-name">
-                <h2><%= item.name %></h2>
-              </div>
-                <div>
-                  <p class="card-trip-user avatar-bordered"><%= item.price %>💰</p>
-                </div>
-                  <div class="soldout">
-                    <% if AvatarItem.exists?(item_id: item.id, avatar_id: current_user.avatar.id) %>
-                      <%= render inline:"<p>Déjà acheté</p>"%>
-                    <% elsif item.price > current_user.avatar.wallet %>
-                      <span>Fond insuffisant</span>
-                    <% else %>
-                      <%= link_to 'Acheter', avatar_items_path(avatar_id: current_user.avatar, item_id: item.id), method: :post %>
-                    <% end %>
-                  </div>
-            </div>
-          </div>
+  <div class="name-categories">
+    <h1><%= category.name.capitalize %>s</h1>
+    <hr>
+  </div>
+  <div class="container-cards">
+    <% @items.where(category: category.id).each do |item| %>
+    <div class="card-trip">
+      <img src="<%= item.image %>">
+      <div class="card-trip-infos">
+        <div class="weapon-name">
+          <h2><%= item.name %></h2>
+        </div>
+        <div>
+          <p class="card-trip-user avatar-bordered"><%= item.price %>💰</p>
+        </div>
+        <div class="soldout">
+          <% if AvatarItem.exists?(item_id: item.id, avatar_id: current_user.avatar.id) %>
+          <%= render inline:"<p>Déjà acheté</p>"%>
+          <% elsif item.price > current_user.avatar.wallet %>
+          <span>Fond insuffisant</span>
+          <% else %>
+          <%= link_to 'Acheter', avatar_items_path(avatar_id: current_user.avatar, item_id: item.id), method: :post %>
           <% end %>
+        </div>
       </div>
+    </div>
+    <% end %>
+  </div>
   <% end %>
   <div class="link">
-    <a href="<%= user_avatar_path(current_user, current_user.avatar, current_user.avatar.board)  %>" class= "btn-shop-left" >Ninja avatar</a>
-    <a href="<%= root_path %>" class= "btn-shop-center" >ACCUEIL</a>
-    <a href="<%= user_avatar_board_path(current_user, current_user.avatar, current_user.avatar.board) %>" class= "btn-shop-right" >Jeux</a>
+    <a href="<%= user_avatar_path(current_user, current_user.avatar, current_user.avatar.board)  %>"
+      class="btn-shop-left">Ninja avatar</a>
+    <a href="<%= root_path %>" class="btn-shop-center">ACCUEIL</a>
+    <a href="<%= user_avatar_board_path(current_user, current_user.avatar, current_user.avatar.board) %>"
+      class="btn-shop-right">Jeux</a>
   </div>
 </div>
