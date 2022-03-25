@@ -1,5 +1,5 @@
 // set time out for notice messages
-export function setTimeOut(){
+export function setTimeOut() {
   const flashDurationInSeconds = 4;
   const flashContainerId = 'flash-message';
 

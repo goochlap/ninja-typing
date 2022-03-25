@@ -7,46 +7,41 @@
       <div class="col">
         <div id="ws-wrapper">
           <div class="hero"></div>
-        <div class= "js-game-score game-score"></div>
+          <div class="js-game-score game-score"></div>
         </div>
       </div>
-        <span class="d-none" id="level-id" data-id="<%= @level %>"></span>
-        <span class="d-none" id="game-id" data-id="<%= @game.id %>"></span>
-        <span class="d-none" id="board-id" data-id="<%= current_user.avatar.board.id %>"></span>
+      <span class="d-none" id="level-id" data-id="<%= @level %>"></span>
+      <span class="d-none" id="game-id" data-id="<%= @game.id %>"></span>
+      <span class="d-none" id="board-id" data-id="<%= current_user.avatar.board.id %>"></span>
     </div>
 
   </div>
   <div class="results-game">
     <h2>✧ Meilleurs Scores ✧</h2>
-      <div class="best-results">
-        <% index = 0 %>
-        <% if @game.participations.count >= 1 %>
-          <% scores = @game.participations.sort_by { |participation| participation[:finished_in].to_i } %>
-          <% scores.reverse[0..2].each do |score| %>
-            <ul><%= index += 1 %># Score = <%= score.finished_in %></ul>
-          <% end %>
-        <% end %>
-      </div>
+    <div class="best-results">
+      <% index = 0 %>
+      <% if @game.participations.count >= 1 %>
+      <% scores = @game.participations.sort_by { |participation| participation[:finished_in].to_i } %>
+      <% scores.reverse[0..2].each do |score| %>
+      <ul><%= index += 1 %># Score = <%= score.finished_in %></ul>
+      <% end %>
+      <% end %>
+    </div>
     <button class="play-btn btn btn-primary btn-lg hover-shadow" data-level="<%= params[:level] %>">JOUER</button>
   </div>
   <div class="all-rewards">
     <div class="rewards">
       <h2>✧ Score ✧</h2>
-        <div class= "js-game-score game-score"></div>
-        <div class="number-word"></div>
-        <div class="button-replay">
-          <%= link_to "Level", user_avatar_board_path(current_user, current_user.avatar, current_user.avatar.board), class:'btn play-btn btn-primary btn-lg button-popup hover-shadow game-button' %>
-          <div class="btn play-btn btn-primary btn-lg button-popup hover-shadow game-button special" id="replay-button">Rejouer</div>
-          <%= link_to "Personnage", user_avatar_path(current_user, current_user.avatar), class:'btn play-btn btn-primary btn-lg button-popup hover-shadow game-button' %>
-          <%= link_to "Magasin", items_path, class:'btn play-btn btn-primary btn-lg button-popup hover-shadow game-button' %>
+      <div class="js-game-score game-score"></div>
+      <div class="number-word"></div>
+      <div class="button-replay">
+        <%= link_to "Level", user_avatar_board_path(current_user, current_user.avatar, current_user.avatar.board), class:'btn play-btn btn-primary btn-lg button-popup hover-shadow game-button' %>
+        <div class="btn play-btn btn-primary btn-lg button-popup hover-shadow game-button special" id="replay-button">
+          Rejouer</div>
+        <%= link_to "Personnage", user_avatar_path(current_user, current_user.avatar), class:'btn play-btn btn-primary btn-lg button-popup hover-shadow game-button' %>
+        <%= link_to "Magasin", items_path, class:'btn play-btn btn-primary btn-lg button-popup hover-shadow game-button' %>
 
-        </div>
+      </div>
     </div>
   </div>
 </div>
-
-
-
-
-
-

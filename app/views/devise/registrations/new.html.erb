@@ -1,6 +1,6 @@
 <div class="container">
-<%= image_tag "favpng_japan-samurai-silhouette-ninja.png", id:"img-form" %>
-<%= image_tag "mask-japan.png", id:"img-mask" %>
+  <%= image_tag "favpng_japan-samurai-silhouette-ninja.png", id:"img-form" %>
+  <%= image_tag "mask-japan.png", id:"img-mask" %>
 
   <div class="row">
     <div class="col-12 col-sm-4 offset-sm-4">
@@ -8,35 +8,35 @@
 
         <h2>Inscription</h2>
 
-          <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-            <%= f.error_notification %>
+        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= f.error_notification %>
 
-            <div class="form-inputs">
-              <%= f.input :name,
+        <div class="form-inputs">
+          <%= f.input :name,
                           label: 'Nom',
                           placeholder: "Hattori Hanzo" %>
-              <%= f.input :email,
+          <%= f.input :email,
                           required: true,
                           autofocus: true,
                           input_html: { autocomplete: "email" },
                           placeholder: "hattorihanzo@gmail.com" %>
-              <%= f.input :password,
+          <%= f.input :password,
                           label: 'Mot de passe',
                           required: true,
                           hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
                           input_html: { autocomplete: "new-password" },
                           placeholder: "✧✧✧✧✧✧" %>
-              <%= f.input :password_confirmation,
+          <%= f.input :password_confirmation,
                           label: 'Confimer le Mot de passe',
                           required: true,
                           input_html: { autocomplete: "new-password" },
                           placeholder: "✧✧✧✧✧✧" %>
-            </div>
+        </div>
 
-            <div class="form-actions">
-              <%= f.button :submit, "S'inscrire", class: "btn btn-primary" %>
-            </div>
-          <% end %>
+        <div class="form-actions">
+          <%= f.button :submit, "S'inscrire", class: "btn btn-primary" %>
+        </div>
+        <% end %>
 
       </div>
     </div>

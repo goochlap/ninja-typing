@@ -3,11 +3,10 @@
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
 
-require("@rails/ujs").start()
-require("turbolinks").start()
-require("@rails/activestorage").start()
-require("channels")
-
+require('@rails/ujs').start();
+require('turbolinks').start();
+require('@rails/activestorage').start();
+require('channels');
 
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
@@ -16,37 +15,28 @@ require("channels")
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
-
 // ----------------------------------------------------
 // Note(lewagon): ABOVE IS RAILS DEFAULT CONFIGURATION
 // WRITE YOUR OWN JS STARTING FROM HERE 👇
 // ----------------------------------------------------
 
 // External imports
-import "bootstrap";
+import 'bootstrap';
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
-import { play } from "../game/ws";
-import { popUpRewards } from "../gameboard/game_show";
+import { play } from '../game/ws';
+import { popUpRewards } from '../gameboard/game_show';
 import { setTimeOut } from '../components/set_time_out';
 import { initHelper } from '../game/helper';
 import { menu } from '../menu/menu';
 
-
-
 document.addEventListener('turbolinks:load', () => {
-    setTimeOut();
-    // avatarMoving();
-    initHelper();
-    play();
-    menu();
+  setTimeOut();
+  // avatarMoving();
+  initHelper();
+  play();
+  menu();
 });
 
-
-
-
-
-
 // btn play game #1
-
